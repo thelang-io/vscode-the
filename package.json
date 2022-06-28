@@ -1,0 +1,75 @@
+{
+  "name": "the",
+  "displayName": "The Programming Language",
+  "version": "0.1.0",
+  "description": "The Programming Language Support",
+  "homepage": "https://the-lang.io/",
+  "author": "Aaron Delasy",
+  "icon": "media/logo-color.png",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "build/extension.js",
+  "preview": true,
+  "private": true,
+  "publisher": "thelang",
+  "repository": "github:thelang-io/vscode-the",
+  "activationEvents": [
+    "onLanguage:the"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters",
+    "Debuggers",
+    "Formatters",
+    "Testing",
+    "Other"
+  ],
+  "dependencies": {
+    "vscode-languageclient": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.67.0",
+    "typescript": "^4.7.4",
+    "vsce": "^2.9.2"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "galleryBanner": {
+    "color": "#FFFFFF",
+    "theme": "light"
+  },
+  "scripts": {
+    "build": "tsc",
+    "pack": "vsce package",
+    "publish": "vsce publish"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "the",
+        "aliases": [
+          "The"
+        ],
+        "extensions": [
+          "*"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "the",
+        "scopeName": "source.the",
+        "path": "./syntaxes/the.tmGrammar.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "the",
+        "path": "./snippets/the.json"
+      }
+    ]
+  }
+}

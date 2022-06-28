@@ -1,0 +1,11 @@
+{
+  "loop": {
+    "prefix": "loop",
+    "body": [
+      "loop ${1} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Loop snippet"
+  }
+}
