@@ -2,7 +2,28 @@
   "scopeName": "source.the",
   "patterns": [
     {
+      "name": "comment.line.shebang.the",
+      "match": "\\A(#!).*(?=$)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.comment.the"
+        }
+      }
+    },
+    {
       "include": "#comments"
+    },
+    {
+      "include": "#expressions"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#statements"
     }
   ],
   "repository": {
@@ -29,6 +50,7 @@
           ]
         },
         {
+          "name": "comment.line.double-slash.the",
           "begin": "//",
           "beginCaptures": {
             "0": {
@@ -36,7 +58,404 @@
             }
           },
           "end": "$",
-          "name": "comment.line.double-slash.the"
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.terminator.statement.the"
+            }
+          }
+        }
+      ]
+    },
+    "expressions": {
+      "patterns": [
+        {
+          "include": "#expression-access"
+        },
+        {
+          "include": "#expression-assignment"
+        },
+        {
+          "include": "#expression-call"
+        },
+        {
+          "include": "#expression-condition"
+        },
+        {
+          "include": "#expression-literal"
+        },
+        {
+          "include": "#expression-object"
+        },
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.round.the"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.round.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#expressions"
+            }
+          ]
+        }
+      ]
+    },
+    "expression-access": {
+      "name": "variable.other.readwrite.the",
+      "match": "([_[:alpha:]]\\w*)(\\s*\\.\\s*([_[:alpha:]]\\w*))*"
+    },
+    "expression-assignment": {
+      "begin": "((?:[_[:alpha:]]\\w*)(?:\\s*\\.\\s*(?:[_[:alpha:]]\\w*))*)\\s*(=|\\+=|\\*=|\\/=|%=|\\-=|&=|\\^=|\\|=|<<=|>>=)(?!=)\\s*",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.other.readwrite.the"
+        },
+        "2": {
+          "name": "keyword.operator.assignment.the"
+        }
+      },
+      "end": "$|^|[,);}\\]]",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "expression-call": {
+      "name": "meta.function-call.the",
+      "begin": "((?:[_[:alpha:]]\\w*)(?:\\s*\\.\\s*(?:[_[:alpha:]]\\w*))*)\\s*(\\()",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.function.the"
+        },
+        "2": {
+          "name": "meta.brace.round.the"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.round.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "expression-condition": {
+      "begin": "\\?",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.operator.ternary.the"
+        }
+      },
+      "end": ":",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.operator.ternary.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "expression-literal": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.true.the",
+          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))true(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+        },
+        {
+          "name": "constant.language.boolean.false.the",
+          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))false(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+        },
+        {
+          "name": "constant.language.nil.the",
+          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))nil(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#strings"
+        }
+      ]
+    },
+    "expression-object": {
+      "name": "meta.objectliteral.the",
+      "begin": "([_[:alpha:]]\\w*)\\s+\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.type.object.the"
+        },
+        "2": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expression-object-member"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "expression-object-member": {
+      "name": "meta.object.member.the",
+      "begin": "([_[:alpha:]]\\w*)\\s*:",
+      "beginCaptures": {
+        "1": {
+          "name": "meta.object-literal.key.the"
+        }
+      },
+      "end": "(?=,|\\}|$|\\/\\/|\\/\\*)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.catch-exception.the",
+          "match": "(?<!\\$)\\b(try|catch|throw)\\b(?!\\$)"
+        },
+        {
+          "name": "keyword.control.the",
+          "match": "(?<!\\$)\\b(break|continue|elif|else|if|loop|return)\\b(?!\\$)"
+        },
+        {
+          "name": "keyword.control.the",
+          "match": "(?<!\\$)\\b(async|await)\\b(?!\\$)"
+        },
+        {
+          "name": "keyword.control.the",
+          "match": "(?<!\\$)\\b(import|from|export)\\b(?!\\$)"
+        },
+        {
+          "name": "keyword.declaration.the",
+          "match": "(?<!\\$)\\b(const|enum|fn|main|obj|union)\\b(?!\\$)"
+        },
+        {
+          "name": "keyword.operator.the",
+          "match": "(?<!\\$)\\b(is)\\b(?!\\$)"
+        },
+        {
+          "name": "storage.modifier.the",
+          "match": "(?<!\\$)\\b(mut)\\b(?!\\$)"
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.the",
+      "match": "(?<!\\$)\\b((0(b|B)[0-1]*)|0(o|O)[0-7]*)|(0(x|X)[0-9a-fA-F]*)|((\\d+\\.?\\d*)((e|E)(\\+|-)?\\d+)?)\\b(?!\\$)"
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.the",
+          "match": "%|\\+|\\*|/|\\-"
+        },
+        {
+          "name": "keyword.operator.assignment.the",
+          "match": "\\="
+        },
+        {
+          "name": "keyword.operator.assignment.compound.the",
+          "match": "\\+=|\\*=|\\/=|%=|\\-="
+        },
+        {
+          "name": "keyword.operator.assignment.compound.bitwise.the",
+          "match": "&=|\\^=|\\|=|<<=|>>="
+        },
+        {
+          "name": "keyword.operator.bitwise.the",
+          "match": "&|~|\\^|\\|"
+        },
+        {
+          "name": "keyword.operator.bitwise.shift.the",
+          "match": "<<|>>"
+        },
+        {
+          "name": "keyword.operator.comparison.the",
+          "match": "==|!="
+        },
+        {
+          "name": "keyword.operator.decrement.the",
+          "match": "\\-\\-"
+        },
+        {
+          "name": "keyword.operator.increment.the",
+          "match": "\\+\\+"
+        },
+        {
+          "name": "keyword.operator.logical.the",
+          "match": "\\!|&&|\\|\\|"
+        },
+        {
+          "name": "keyword.operator.relational.the",
+          "match": "<=?|>=?"
+        },
+        {
+          "name": "keyword.operator.ternary.the",
+          "match": "\\?|\\:"
+        }
+      ]
+    },
+    "punctuation-accessor": {
+      "name": "punctuation.accessor.the",
+      "match": "\\."
+    },
+    "punctuation-comma": {
+      "name": "punctuation.separator.comma.the",
+      "match": ","
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.the",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.the"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string-character-escape"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.the",
+          "begin": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.the"
+            }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#string-character-escape"
+            }
+          ]
+        }
+      ]
+    },
+    "string-character-escape": {
+      "patterns": [
+        {
+          "name": "constant.character.escape.the",
+          "match": "\\\\[0bfnrtv\\\\'\"]"
+        },
+        {
+          "name": "invalid.illegal.unknown-escape.the",
+          "match": "\\\\[^0bfnrtv\\'\"]"
+        }
+      ]
+    },
+    "statements": {
+      "patterns": [
+        {
+          "include": "#statement-break"
+        },
+        {
+          "include": "#statement-continue"
+        },
+        {
+          "include": "#statement-expr"
+        },
+        {
+          "include": "#statement-function-declaration"
+        },
+        {
+          "include": "#statement-if"
+        },
+        {
+          "include": "#statement-loop"
+        },
+        {
+          "include": "#statement-main"
+        },
+        {
+          "include": "#statement-object-declaration"
+        },
+        {
+          "include": "#statement-return"
+        },
+        {
+          "include": "#statement-variable-declaration"
+        }
+      ]
+    },
+    "statement-break": {},
+    "statement-continue": {},
+    "statement-expr": {},
+    "statement-function-declaration": {},
+    "statement-if": {},
+    "statement-loop": {},
+    "statement-main": {},
+    "statement-object-declaration": {},
+    "statement-return": {},
+    "statement-variable-declaration": {},
+    "type": {
+      "patterns": [
+        {
+          "name": "storage.type.built-in.primitive.the",
+          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))(any|bool|byte|char|f(32|64)|float|i(8|16|32|64)|int|str|u(8|16|32|64)|void)(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+        },
+        {
+          "name": "entity.name.type.the",
+          "match": "[_[:alpha:]]\\w*"
         }
       ]
     }
