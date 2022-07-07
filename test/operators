@@ -1,0 +1,106 @@
+// SYNTAX TEST "source.the"
+
+%=
+// <-- keyword.operator.assignment.compound.the
+
++=
+// <-- keyword.operator.assignment.compound.the
+
+*=
+// <-- keyword.operator.assignment.compound.the
+
+/=
+// <-- keyword.operator.assignment.compound.the
+
+-=
+// <-- keyword.operator.assignment.compound.the
+
+&=
+// <-- keyword.operator.assignment.compound.bitwise.the
+
+^=
+// <-- keyword.operator.assignment.compound.bitwise.the
+
+|=
+// <-- keyword.operator.assignment.compound.bitwise.the
+
+<<=
+// <--- keyword.operator.assignment.compound.bitwise.the
+
+>>=
+// <--- keyword.operator.assignment.compound.bitwise.the
+
+==
+// <-- keyword.operator.comparison.the
+
+!=
+// <-- keyword.operator.comparison.the
+
+<
+// <- keyword.operator.relational.the
+
+<=
+// <-- keyword.operator.relational.the
+
+>
+// <- keyword.operator.relational.the
+
+>=
+// <-- keyword.operator.relational.the
+
+=
+// <- keyword.operator.assignment.the
+
+%
+// <- keyword.operator.arithmetic.the
+
++
+// <- keyword.operator.arithmetic.the
+
+*
+// <- keyword.operator.arithmetic.the
+
+/
+// <- keyword.operator.arithmetic.the
+
+-
+// <- keyword.operator.arithmetic.the
+
+&
+// <- keyword.operator.bitwise.the
+
+~
+// <- keyword.operator.bitwise.the
+
+^
+// <- keyword.operator.bitwise.the
+
+|
+// <- keyword.operator.bitwise.the
+
+<<
+// <-- keyword.operator.bitwise.shift.the
+
+>>
+// <-- keyword.operator.bitwise.shift.the
+
+--
+// <-- keyword.operator.decrement.the
+
+++
+// <-- keyword.operator.increment.the
+
+!
+// <- keyword.operator.logical.the
+
+&&
+// <-- keyword.operator.logical.the
+
+||
+// <-- keyword.operator.logical.the
+
+?
+// <- keyword.operator.ternary.the
+
+:
+// <- keyword.operator.ternary.the

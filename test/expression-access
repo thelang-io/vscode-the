@@ -1,0 +1,7 @@
+// SYNTAX TEST "source.the"
+
+test
+// <---- variable.other.the
+
+test.prop
+// <--------- variable.other.the

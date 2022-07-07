@@ -1,0 +1,43 @@
+// SYNTAX TEST "source.the"
+
+Test{}
+// <------ meta.objectliteral.the
+// <---- entity.name.type.object.the
+//  ^ punctuation.definition.block.the
+//   ^ punctuation.definition.block.the
+
+Test{a: 10}
+// <----------- meta.objectliteral.the
+// <---- entity.name.type.object.the
+//  ^ punctuation.definition.block.the
+//   ^^^^^ meta.object.member.the
+//   ^ meta.object-literal.key.the
+//    ^ punctuation.separator.key-value.the
+//      ^^ constant.numeric.the
+//        ^ punctuation.definition.block.the
+
+Test{a: 10, b: "test"}
+// <---------------------- meta.objectliteral.the
+// <---- entity.name.type.object.the
+//  ^ punctuation.definition.block.the
+//                   ^ punctuation.definition.block.the
+
+Test{a: Test2{b: 10}}
+// <--------------------- meta.objectliteral.the
+// <---- entity.name.type.object.the
+//  ^ punctuation.definition.block.the
+//                  ^ punctuation.definition.block.the
+
+Test{
+// <------ meta.objectliteral.the
+// <---- entity.name.type.object.the
+//  ^ punctuation.definition.block.the
+  a: 10
+// <------- meta.objectliteral.the
+// <~~----- meta.object.member.the
+// <~~- meta.object-literal.key.the
+// ^ punctuation.separator.key-value.the
+//   ^^ constant.numeric.the
+}
+// <- meta.objectliteral.the
+// <- punctuation.definition.block.the

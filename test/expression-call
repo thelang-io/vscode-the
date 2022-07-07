@@ -1,0 +1,62 @@
+// SYNTAX TEST "source.the"
+
+test()
+// <------ meta.function-call.the
+// <---- entity.name.function.the
+//  ^ meta.brace.round.the
+//   ^ meta.brace.round.the
+
+test.prop()
+// <----------- meta.function-call.the
+// <--------- entity.name.function.the
+//       ^ meta.brace.round.the
+//        ^ meta.brace.round.the
+
+test(a)
+// <-------- meta.function-call.the
+// <---- entity.name.function.the
+//  ^ meta.brace.round.the
+//   ^ variable.other.the
+//    ^ meta.brace.round.the
+
+test(a, 1)
+// <---------- meta.function-call.the
+// <---- entity.name.function.the
+//  ^ meta.brace.round.the
+//   ^ variable.other.the
+//    ^ punctuation.separator.comma.the
+//      ^ constant.numeric.the
+//       ^ meta.brace.round.the
+
+test(a, 2, "test")
+// <------------------- meta.function-call.the
+// <---- entity.name.function.the
+//  ^ meta.brace.round.the
+//   ^ variable.other.the
+//    ^ punctuation.separator.comma.the
+//      ^ constant.numeric.the
+//       ^ punctuation.separator.comma.the
+//         ^^^^^^ string.quoted.double.the
+//               ^ meta.brace.round.the
+
+test1(test2(a))
+// <------------------- meta.function-call.the
+// <---- entity.name.function.the
+//   ^ meta.brace.round.the
+//    ^^^^^^^^ meta.function-call.the
+//    ^^^^^ entity.name.function.the
+//         ^ meta.brace.round.the
+//          ^ variable.other.the
+//           ^ meta.brace.round.the
+//            ^ meta.brace.round.the
+
+test(
+// <--------- meta.function-call.the
+// <---- entity.name.function.the
+//  ^ meta.brace.round.the
+  10
+// <-------- meta.function-call.the
+// <~~-- constant.numeric.the
+)
+// <- meta.function-call.the
+// <- meta.brace.round.the

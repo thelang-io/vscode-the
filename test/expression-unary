@@ -1,0 +1,51 @@
+// SYNTAX TEST "source.the"
+
+!test
+// <- keyword.operator.logical.the
+// <~---- variable.other.the
+
+~test
+// <- keyword.operator.bitwise.the
+// <~---- variable.other.the
+
+-test
+// <- keyword.operator.arithmetic.the
+// <~---- variable.other.the
+
++test
+// <- keyword.operator.arithmetic.the
+// <~---- variable.other.the
+
+++test
+// <-- keyword.operator.increment.the
+// <~~---- variable.other.the
+
+--test
+// <-- keyword.operator.decrement.the
+// <~~---- variable.other.the
+
+test++
+// <---- variable.other.the
+//  ^^ keyword.operator.increment.the
+
+test--
+// <---- variable.other.the
+//  ^^ keyword.operator.decrement.the
+
+~
+// <- keyword.operator.bitwise.the
+test
+// <---- variable.other.the
+
+!~-2
+// <- keyword.operator.logical.the
+// <~- keyword.operator.bitwise.the
+// <~~- keyword.operator.arithmetic.the
+// ^ constant.numeric.the
+
++(a--)
+// <- keyword.operator.arithmetic.the
+// <~- meta.brace.round.the
+// <~~- variable.other.the
+// ^^ keyword.operator.decrement.the
+//   ^ meta.brace.round.the

@@ -1,0 +1,117 @@
+// SYNTAX TEST "source.the"
+
+false
+// <---- constant.language.boolean.false.the
+
+nil
+// <---- constant.language.nil.the
+
+true
+// <---- constant.language.boolean.true.the
+
+""
+// <-- string.quoted.double.the
+
+"test"
+// <------ string.quoted.double.the
+
+"test1 \n test2"
+// <---------------- string.quoted.double.the
+//     ^^ constant.character.escape.the
+
+"test1 \1 test2"
+// <---------------- string.quoted.double.the
+//     ^^ invalid.illegal.unknown-escape.the
+
+"
+// <- string.quoted.double.the
+"
+// <- string.quoted.double.the
+
+"line1
+// <------ string.quoted.double.the
+line2"
+// <------ string.quoted.double.the
+
+'a'
+// <--- string.quoted.single.the
+
+'\n'
+// <---- string.quoted.single.the
+// <~-- constant.character.escape.the
+
+'\1'
+// <---- string.quoted.single.the
+// <~-- invalid.illegal.unknown-escape.the
+
+0
+// <- constant.numeric.the
+
+10
+// <-- constant.numeric.the
+
+18446744073709551615
+// <-------------------- constant.numeric.the
+
+0b0
+// <-- constant.numeric.the
+
+0B01
+// <--- constant.numeric.the
+
+0b1111111111111111111111111111111111111111111111111111111111111111
+// <------------------------------------------------------------------ constant.numeric.the
+
+0o0
+// <-- constant.numeric.the
+
+0O07
+// <--- constant.numeric.the
+
+0o1777777777777777777777
+// <------------------------ constant.numeric.the
+
+0xF
+// <-- constant.numeric.the
+
+0X0F
+// <--- constant.numeric.the
+
+0xFFFFFFFFFFFFFFFF
+// <------------------ constant.numeric.the
+
+0.0
+// <--- constant.numeric.the
+
+10.10
+// <----- constant.numeric.the
+
+18446744073709551615.18446744073709551615
+// <----------------------------------------- constant.numeric.the
+
+10.10e0
+// <------- constant.numeric.the
+
+10.10E01
+// <-------- constant.numeric.the
+
+10.10e360
+// <--------- constant.numeric.the
+
+10.10e+0
+// <-------- constant.numeric.the
+
+10.10E+10
+// <--------- constant.numeric.the
+
+10.10e+360
+// <---------- constant.numeric.the
+
+10.10e-0
+// <-------- constant.numeric.the
+
+10.10E-10
+// <--------- constant.numeric.the
+
+10.10e-360
+// <---------- constant.numeric.the

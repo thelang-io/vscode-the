@@ -1,0 +1,76 @@
+// SYNTAX TEST "source.the"
+
+test = 10
+// <---- variable.other.the
+//   ^ keyword.operator.assignment.the
+//     ^^ constant.numeric.the
+
+test.prop = "test"
+// <--------- variable.other.the
+//        ^ keyword.operator.assignment.the
+//          ^^^^^^ string.quoted.double.the
+
+test += 'c'
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.the
+//      ^^^ string.quoted.single.the
+
+test -= false
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.the
+//      ^^^^^ constant.language.boolean.false.the
+
+test *= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.the
+//      ^^ constant.numeric.the
+
+test /= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.the
+//      ^^ constant.numeric.the
+
+test %= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.the
+//      ^^ constant.numeric.the
+
+test &= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.bitwise.the
+//      ^^ constant.numeric.the
+
+test ^= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.bitwise.the
+//      ^^ constant.numeric.the
+
+test |= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.assignment.compound.bitwise.the
+//      ^^ constant.numeric.the
+
+test <<= 10
+// <---- variable.other.the
+//   ^^^ keyword.operator.assignment.compound.bitwise.the
+//       ^^ constant.numeric.the
+
+test >>= 10
+// <---- variable.other.the
+//   ^^^ keyword.operator.assignment.compound.bitwise.the
+//       ^^ constant.numeric.the
+
+test1 = test2 = test3 = 4
+// <----- variable.other.the
+//    ^ keyword.operator.assignment.the
+//      ^^^^^ variable.other.the
+//            ^ keyword.operator.assignment.the
+//              ^^^^^ variable.other.the
+//                    ^ keyword.operator.assignment.the
+//                      ^ constant.numeric.the
+
+test1 =
+// <----- variable.other.the
+//    ^ keyword.operator.assignment.the
+  10
+// <~~- constant.numeric.the
