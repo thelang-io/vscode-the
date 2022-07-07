@@ -1,0 +1,54 @@
+// SYNTAX TEST "source.the"
+
+true ? 1 : 2
+// <---- constant.language.boolean.true.the
+//   ^ keyword.operator.ternary.the
+//     ^ constant.numeric.the
+//       ^ keyword.operator.ternary.the
+//         ^ constant.numeric.the
+
+true
+// <---- constant.language.boolean.true.the
+  ? 1
+// <~~- keyword.operator.ternary.the
+//  ^ constant.numeric.the
+  : 2
+// <~~- keyword.operator.ternary.the
+//  ^ constant.numeric.the
+
+true ? false ? 1 : 2 : 3
+// <---- constant.language.boolean.true.the
+//   ^ keyword.operator.ternary.the
+//     ^^^^^ constant.language.boolean.false.the
+//           ^ keyword.operator.ternary.the
+//             ^ constant.numeric.the
+//               ^ keyword.operator.ternary.the
+//                 ^ constant.numeric.the
+//                   ^ keyword.operator.ternary.the
+//                     ^ constant.numeric.the
+
+true ? 1 : false ? 2 : 3
+// <---- constant.language.boolean.true.the
+//   ^ keyword.operator.ternary.the
+//     ^ constant.numeric.the
+//       ^ keyword.operator.ternary.the
+//         ^^^^^ constant.language.boolean.false.the
+//               ^ keyword.operator.ternary.the
+//                 ^ constant.numeric.the
+//                   ^ keyword.operator.ternary.the
+//                     ^ constant.numeric.the
+
+true ? 1 : (false ? 2 : 3 + 2)
+// <---- constant.language.boolean.true.the
+//   ^ keyword.operator.ternary.the
+//     ^ constant.numeric.the
+//       ^ keyword.operator.ternary.the
+//         ^ meta.brace.round.the
+//          ^^^^^ constant.language.boolean.false.the
+//                ^ keyword.operator.ternary.the
+//                  ^ constant.numeric.the
+//                    ^ keyword.operator.ternary.the
+//                      ^ constant.numeric.the
+//                        ^ keyword.operator.arithmetic.the
+//                          ^ constant.numeric.the
+//                           ^ meta.brace.round.the

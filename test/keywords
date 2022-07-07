@@ -1,0 +1,70 @@
+// SYNTAX TEST "source.the"
+
+async
+// <----- keyword.control.the
+
+await
+// <----- keyword.control.the
+
+break
+// <----- keyword.control.the
+
+catch
+// <----- keyword.control.catch-exception.the
+
+const
+// <----- keyword.declaration.the
+
+continue
+// <-------- keyword.control.the
+
+elif
+// <---- keyword.control.the
+
+else
+// <---- keyword.control.the
+
+enum
+// <---- keyword.declaration.the
+
+export
+// <------ keyword.control.the
+
+fn
+// <-- keyword.declaration.the
+
+from
+// <---- keyword.control.the
+
+if
+// <-- keyword.control.the
+
+import
+// <------ keyword.control.the
+
+is
+// <-- keyword.operator.the
+
+loop
+// <---- keyword.control.the
+
+main
+// <---- keyword.declaration.the
+
+mut
+// <--- storage.modifier.the
+
+obj
+// <--- keyword.declaration.the
+
+return
+// <------ keyword.control.the
+
+throw
+// <----- keyword.control.catch-exception.the
+
+try
+// <--- keyword.control.catch-exception.the
+
+union
+// <----- keyword.declaration.the

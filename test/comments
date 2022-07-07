@@ -1,0 +1,20 @@
+// SYNTAX TEST "source.the"
+
+//
+// <-- comment.line.double-slash.the
+
+// content
+// <---------- comment.line.double-slash.the
+
+/**/
+// <---- comment.block.documentation.the
+
+/* content */
+// <------------- comment.block.documentation.the
+
+/*!
+// <--- comment.block.documentation.the
+ * content
+// <---------- comment.block.documentation.the
+ */
+// <--- comment.block.documentation.the

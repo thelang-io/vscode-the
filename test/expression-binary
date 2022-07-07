@@ -1,0 +1,112 @@
+// SYNTAX TEST "source.the"
+
+test / 10
+// <---- variable.other.the
+//   ^ keyword.operator.arithmetic.the
+//     ^^ constant.numeric.the
+
+test % 10
+// <---- variable.other.the
+//   ^ keyword.operator.arithmetic.the
+//     ^^ constant.numeric.the
+
+test * 10
+// <---- variable.other.the
+//   ^ keyword.operator.arithmetic.the
+//     ^^ constant.numeric.the
+
+test + 10
+// <---- variable.other.the
+//   ^ keyword.operator.arithmetic.the
+//     ^^ constant.numeric.the
+
+test - 10
+// <---- variable.other.the
+//   ^ keyword.operator.arithmetic.the
+//     ^^ constant.numeric.the
+
+test << 10
+// <---- variable.other.the
+//   ^^ keyword.operator.bitwise.shift.the
+//      ^^ constant.numeric.the
+
+test >> 10
+// <---- variable.other.the
+//   ^^ keyword.operator.bitwise.shift.the
+//      ^^ constant.numeric.the
+
+test <= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.relational.the
+//      ^^ constant.numeric.the
+
+test < 10
+// <---- variable.other.the
+//   ^ keyword.operator.relational.the
+//     ^^ constant.numeric.the
+
+test >= 10
+// <---- variable.other.the
+//   ^^ keyword.operator.relational.the
+//      ^^ constant.numeric.the
+
+test > 10
+// <---- variable.other.the
+//   ^ keyword.operator.relational.the
+//     ^^ constant.numeric.the
+
+test == 10
+// <---- variable.other.the
+//   ^^ keyword.operator.comparison.the
+//      ^^ constant.numeric.the
+
+test != 10
+// <---- variable.other.the
+//   ^^ keyword.operator.comparison.the
+//      ^^ constant.numeric.the
+
+test & 10
+// <---- variable.other.the
+//   ^ keyword.operator.bitwise.the
+//     ^^ constant.numeric.the
+
+test ^ 10
+// <---- variable.other.the
+//   ^ keyword.operator.bitwise.the
+//     ^^ constant.numeric.the
+
+test | 10
+// <---- variable.other.the
+//   ^ keyword.operator.bitwise.the
+//     ^^ constant.numeric.the
+
+test && 10
+// <---- variable.other.the
+//   ^^ keyword.operator.logical.the
+//      ^^ constant.numeric.the
+
+test || 10
+// <---- variable.other.the
+//   ^^ keyword.operator.logical.the
+//      ^^ constant.numeric.the
+
+test1 +
+// <----- variable.other.the
+//    ^ keyword.operator.arithmetic.the
+  test
+// <~~----- variable.other.the
+
+((1 + 2) / 3 * 4) - 10
+// <- meta.brace.round.the
+// <~- meta.brace.round.the
+// <~~- constant.numeric.the
+//  ^ keyword.operator.arithmetic.the
+//    ^ constant.numeric.the
+//     ^ meta.brace.round.the
+//       ^ keyword.operator.arithmetic.the
+//         ^ constant.numeric.the
+//           ^ keyword.operator.arithmetic.the
+//             ^ constant.numeric.the
+//              ^ meta.brace.round.the
+//                ^ keyword.operator.arithmetic.the
+//                  ^ constant.numeric.the
