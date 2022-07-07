@@ -139,15 +139,15 @@
       "patterns": [
         {
           "name": "constant.language.boolean.true.the",
-          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))true(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+          "match": "(?<!\\w|\\.)true(?!\\w|\\.)"
         },
         {
           "name": "constant.language.boolean.false.the",
-          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))false(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+          "match": "(?<!\\w|\\.)false(?!\\w|\\.)"
         },
         {
           "name": "constant.language.nil.the",
-          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))nil(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+          "match": "(?<!\\w|\\.)nil(?!\\w|\\.)"
         },
         {
           "include": "#numbers"
@@ -233,37 +233,37 @@
       "patterns": [
         {
           "name": "keyword.control.catch-exception.the",
-          "match": "(?<!\\$)\\b(try|catch|throw)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(try|catch|throw)(?!\\w|\\.)"
         },
         {
           "name": "keyword.control.the",
-          "match": "(?<!\\$)\\b(break|continue|elif|else|if|loop|return)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(break|continue|elif|else|if|loop|return)(?!\\w|\\.)"
         },
         {
           "name": "keyword.control.the",
-          "match": "(?<!\\$)\\b(async|await)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(async|await)(?!\\w|\\.)"
         },
         {
           "name": "keyword.control.the",
-          "match": "(?<!\\$)\\b(import|from|export)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(import|from|export)(?!\\w|\\.)"
         },
         {
           "name": "keyword.declaration.the",
-          "match": "(?<!\\$)\\b(const|enum|fn|main|obj|union)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(const|enum|fn|main|obj|union)(?!\\w|\\.)"
         },
         {
           "name": "keyword.operator.the",
-          "match": "(?<!\\$)\\b(is)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(is)(?!\\w|\\.)"
         },
         {
           "name": "storage.modifier.the",
-          "match": "(?<!\\$)\\b(mut)\\b(?!\\$)"
+          "match": "(?<!\\w|\\.)(mut)(?!\\w|\\.)"
         }
       ]
     },
     "numbers": {
       "name": "constant.numeric.the",
-      "match": "(?<!\\$)\\b((0(b|B)[0-1]*)|0(o|O)[0-7]*)|(0(x|X)[0-9a-fA-F]*)|((\\d+\\.?\\d*)((e|E)(\\+|-)?\\d+)?)\\b(?!\\$)"
+      "match": "(?<!\\w|\\.)((0(b|B)[0-1]*)|0(o|O)[0-7]*)|(0(x|X)[0-9a-fA-F]*)|((\\d+\\.?\\d*)((e|E)(\\+|-)?\\d+)?)(?!\\w|\\.)"
     },
     "operators": {
       "patterns": [
@@ -380,15 +380,6 @@
     "statements": {
       "patterns": [
         {
-          "include": "#statement-break"
-        },
-        {
-          "include": "#statement-continue"
-        },
-        {
-          "include": "#statement-expr"
-        },
-        {
           "include": "#statement-function-declaration"
         },
         {
@@ -411,9 +402,6 @@
         }
       ]
     },
-    "statement-break": {},
-    "statement-continue": {},
-    "statement-expr": {},
     "statement-function-declaration": {},
     "statement-if": {},
     "statement-loop": {},
@@ -425,7 +413,7 @@
       "patterns": [
         {
           "name": "storage.type.built-in.primitive.the",
-          "match": "(?<!\\w)(?:(?<=\\.\\.\\.)|(?<!\\.))(any|bool|byte|char|f(32|64)|float|i(8|16|32|64)|int|str|u(8|16|32|64)|void)(?!\\w)(?:(?=\\.\\.\\.)|(?!\\.))"
+          "match": "(?<!\\w|\\.)(any|bool|byte|char|f(?:32|64)|float|i(?:8|16|32|64)|int|str|u(?:8|16|32|64)|void)(?!\\w|\\.)"
         },
         {
           "name": "entity.name.type.the",
