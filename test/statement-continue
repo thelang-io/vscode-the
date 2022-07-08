@@ -1,0 +1,4 @@
+// SYNTAX TEST "source.the"
+
+loop { continue }
+//     ^^^^^^^^ keyword.control.the

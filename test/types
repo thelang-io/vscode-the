@@ -1,0 +1,55 @@
+// SYNTAX TEST "source.the"
+
+test: any
+//    ^^^ storage.type.built-in.primitive.the
+
+test: bool
+//    ^^^^ storage.type.built-in.primitive.the
+
+test: byte
+//    ^^^^ storage.type.built-in.primitive.the
+
+test: f32
+//    ^^^ storage.type.built-in.primitive.the
+
+test: f64
+//    ^^^ storage.type.built-in.primitive.the
+
+test: float
+//    ^^^^^ storage.type.built-in.primitive.the
+
+test: i8
+//    ^^ storage.type.built-in.primitive.the
+
+test: i16
+//    ^^^ storage.type.built-in.primitive.the
+
+test: i32
+//    ^^^ storage.type.built-in.primitive.the
+
+test: i64
+//    ^^^ storage.type.built-in.primitive.the
+
+test: int
+//    ^^^ storage.type.built-in.primitive.the
+
+test: str
+//    ^^^ storage.type.built-in.primitive.the
+
+test: u8
+//    ^^ storage.type.built-in.primitive.the
+
+test: u16
+//    ^^^ storage.type.built-in.primitive.the
+
+test: u32
+//    ^^^ storage.type.built-in.primitive.the
+
+test: u64
+//    ^^^ storage.type.built-in.primitive.the
+
+test: void
+//    ^^^^ storage.type.built-in.primitive.the
+
+test: Human
+//    ^^^^^ entity.name.type.the

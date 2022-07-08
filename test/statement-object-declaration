@@ -1,0 +1,66 @@
+// SYNTAX TEST "source.the"
+
+obj Test {}
+// <----------- meta.object.declaration.the
+// <--- storage.type.object.the
+//  ^^^^ entity.name.type.object.the
+//       ^ punctuation.definition.block.the
+//        ^ punctuation.definition.block.the
+
+obj Human {age: int}
+// <-------------------- meta.object.declaration.the
+// <--- storage.type.object.the
+//  ^^^^^ entity.name.type.object.the
+//        ^ punctuation.definition.block.the
+//         ^^^^^^^^ meta.field.declaration.the
+//         ^^^ meta.definition.property.the variable.object.property.the
+//            ^ keyword.operator.type.annotation.the
+//              ^^^ storage.type.built-in.primitive.the
+//                 ^ punctuation.definition.block.the
+
+obj Test {
+// <---------- meta.object.declaration.the
+// <--- storage.type.object.the
+//  ^^^^ entity.name.type.object.the
+//       ^ punctuation.definition.block.the
+  x: int
+// <-------- meta.object.declaration.the
+// <~~------ meta.field.declaration.the
+// <~~- meta.definition.property.the variable.object.property.the
+// ^ keyword.operator.type.annotation.the
+//   ^^^ storage.type.built-in.primitive.the
+}
+// <- meta.object.declaration.the
+// <- punctuation.definition.block.the
+
+obj Human {
+// <----------- meta.object.declaration.the
+// <--- storage.type.object.the
+//  ^^^^^ entity.name.type.object.the
+//        ^ punctuation.definition.block.the
+  age: int
+// <---------- meta.object.declaration.the
+// <~~-------- meta.field.declaration.the
+// <~~--- meta.definition.property.the variable.object.property.the
+//   ^ keyword.operator.type.annotation.the
+//     ^^^ storage.type.built-in.primitive.the
+  gender: HumanGender
+// <--------------------- meta.object.declaration.the
+// <~~------------------- meta.field.declaration.the
+// <~~------ meta.definition.property.the variable.object.property.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^^^^^^^^^ entity.name.type.the
+}
+// <- meta.object.declaration.the
+// <- punctuation.definition.block.the
+
+export obj Test {x: int}
+// <------------------------ meta.object.declaration.the
+// <------ keyword.control.export.the
+//     ^^^ storage.type.object.the
+//         ^^^^ entity.name.type.object.the
+//              ^ punctuation.definition.block.the
+//               ^ meta.definition.property.the variable.object.property.the
+//                ^ keyword.operator.type.annotation.the
+//                  ^^^ storage.type.built-in.primitive.the
+//                     ^ punctuation.definition.block.the

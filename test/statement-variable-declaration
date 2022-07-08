@@ -1,0 +1,44 @@
+// SYNTAX TEST "source.the"
+
+test := 10
+// <---------- meta.var.expr.the
+// <---- meta.definition.variable.the variable.other.the
+//   ^^ keyword.operator.assignment.the
+//      ^^ constant.numeric.the
+
+test: str
+// <--------- meta.var.expr.the
+// <---- meta.definition.variable.the variable.other.the
+//  ^ keyword.operator.type.annotation.the
+//    ^^^ storage.type.built-in.primitive.the
+
+test: i64 = 10
+// <-------------- meta.var.expr.the
+// <---- meta.definition.variable.the variable.other.the
+//  ^ keyword.operator.type.annotation.the
+//    ^^^ storage.type.built-in.primitive.the
+//        ^ keyword.operator.assignment.the
+//          ^^ constant.numeric.the
+
+mut test := 10
+// <-------------- meta.var.expr.the
+// <--- storage.modifier.the
+//  ^^^^ meta.definition.variable.the variable.other.the
+//       ^^ keyword.operator.assignment.the
+//          ^^ constant.numeric.the
+
+mut test: str
+// <------------- meta.var.expr.the
+// <--- storage.modifier.the
+//  ^^^^ meta.definition.variable.the variable.other.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^ storage.type.built-in.primitive.the
+
+mut test: i64 = 10
+// <------------------ meta.var.expr.the
+// <--- storage.modifier.the
+//  ^^^^ meta.definition.variable.the variable.other.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^ storage.type.built-in.primitive.the
+//            ^ keyword.operator.assignment.the
+//              ^^ constant.numeric.the

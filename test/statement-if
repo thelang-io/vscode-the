@@ -1,0 +1,53 @@
+// SYNTAX TEST "source.the"
+
+if true {}
+// <---------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^^^^ constant.language.boolean.true.the
+//      ^ punctuation.definition.block.the
+//       ^ punctuation.definition.block.the
+
+if 1 > 2 {}
+// <----------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^ constant.numeric.the
+//   ^ keyword.operator.relational.the
+//     ^ constant.numeric.the
+//       ^ punctuation.definition.block.the
+//        ^ punctuation.definition.block.the
+
+if i < 10 { test() }
+// <-------------------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^ variable.other.the
+//   ^ keyword.operator.relational.the
+//     ^^ constant.numeric.the
+//        ^ punctuation.definition.block.the
+//          ^^^^^^ meta.function-call.the
+//                 ^ punctuation.definition.block.the
+
+if i < 10 {
+// <----------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^ variable.other.the
+//   ^ keyword.operator.relational.the
+//     ^^ constant.numeric.the
+//        ^ punctuation.definition.block.the
+  test()
+// <-------- meta.if.the
+// <~~------ meta.function-call.the
+}
+// <- meta.if.the
+// <- punctuation.definition.block.the
+
+if (i < 10) { test() }
+// <-------------------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^ meta.brace.round.the
+//  ^ variable.other.the
+//    ^ keyword.operator.relational.the
+//      ^^ constant.numeric.the
+//        ^ meta.brace.round.the
+//          ^ punctuation.definition.block.the
+//            ^^^^^^ meta.function-call.the
+//                   ^ punctuation.definition.block.the

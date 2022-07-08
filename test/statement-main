@@ -1,0 +1,15 @@
+// SYNTAX TEST "source.the"
+
+main {}
+// <------- meta.function.main.the
+// <---- keyword.declaration.the
+//   ^ punctuation.definition.block.the
+//    ^ punctuation.definition.block.the
+
+main {
+// <------- meta.function.main.the
+// <---- keyword.declaration.the
+//   ^ punctuation.definition.block.the
+}
+// <- meta.function.main.the
+// <- punctuation.definition.block.the
