@@ -1,0 +1,23 @@
+// SYNTAX TEST "source.the"
+
+main { return }
+//     ^^^^^^ meta.return.the
+//     ^^^^^^ keyword.control.flow.the
+
+main { return 255 }
+//     ^^^^^^^^^^ meta.return.the
+//     ^^^^^^ keyword.control.flow.the
+//            ^^^ constant.numeric.the
+
+main {
+  return
+// <~~------ meta.return.the
+// <~~------ keyword.control.flow.the
+}
+
+main {
+  return 255
+// <~~---------- meta.return.the
+// <~~------ keyword.control.flow.the
+//       ^^^ constant.numeric.the
+}

@@ -15,9 +15,6 @@
     },
     {
       "include": "#statements"
-    },
-    {
-      "include": "#expressions"
     }
   ],
   "repository": {
@@ -197,7 +194,7 @@
           "name": "punctuation.separator.key-value.the"
         }
       },
-      "end": "(?=,|\\}|$|\\/\\/|\\/\\*)",
+      "end": "(?=,|\\}|$|\\/[\\/|\\*])",
       "patterns": [
         {
           "include": "#comments"
@@ -281,7 +278,7 @@
         },
         {
           "name": "keyword.operator.assignment.the",
-          "match": "\\="
+          "match": "\\=|\\:\\="
         },
         {
           "name": "keyword.operator.bitwise.shift.the",
@@ -321,6 +318,10 @@
       "name": "punctuation.separator.comma.the",
       "match": ","
     },
+    "punctuation-semicolon": {
+      "name": "punctuation.terminator.statement.the",
+      "match": ";"
+    },
     "strings": {
       "patterns": [
         {
@@ -351,7 +352,7 @@
               "name": "punctuation.definition.string.begin.the"
             }
           },
-          "end": "'|(?=\\s*\\n)",
+          "end": "'|$",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.string.end.the"
@@ -399,16 +400,271 @@
         },
         {
           "include": "#statement-variable-declaration"
+        },
+        {
+          "include": "#expressions"
         }
       ]
     },
     "statement-function-declaration": {},
-    "statement-if": {},
-    "statement-loop": {},
-    "statement-main": {},
-    "statement-object-declaration": {},
-    "statement-return": {},
-    "statement-variable-declaration": {},
+    "statement-if": {
+      "name": "meta.if.the",
+      "begin": "(?<!\\w|\\.)(?=if\\s+([^{]*)\\s*\\{)",
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?<!\\w|\\.)(if)\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.conditional.the"
+            }
+          },
+          "end": "\\{",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.block.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#expressions"
+            }
+          ]
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#statements"
+        }
+      ]
+    },
+    "statement-loop": {
+      "name": "meta.loop.the",
+      "begin": "(?<!\\w|\\.)(?=loop\\s+([^{]*)\\s*\\{)",
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "(?<!\\w|\\.)(loop)\\s*(?:(\\()\\s*)?",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.loop.the"
+            },
+            "2": {
+              "name": "meta.brace.round.the"
+            }
+          },
+          "end": "(?:(\\))\\s*)?(\\{)",
+          "endCaptures": {
+            "1": {
+              "name": "meta.brace.round.the"
+            },
+            "2": {
+              "name": "punctuation.definition.block.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#statement-variable-declaration"
+            },
+            {
+              "include": "#expressions"
+            },
+            {
+              "include": "#punctuation-semicolon"
+            }
+          ]
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#statements"
+        }
+      ]
+    },
+    "statement-main": {
+      "name": "meta.function.main.the",
+      "begin": "(?<!\\w|\\.)(main)(?!\\w|\\.)\\s*(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.declaration.the"
+        },
+        "2": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#statements"
+        }
+      ]
+    },
+    "statement-object-declaration": {
+      "name": "meta.object.declaration.the",
+      "begin": "(?<!\\w|\\.)(?:(export)\\s+)?(obj)(?!\\w|\\.)\\s+([_[:alpha:]]\\w*)\\s*(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.export.the"
+        },
+        "2": {
+          "name": "storage.type.object.the"
+        },
+        "3": {
+          "name": "entity.name.type.object.the"
+        },
+        "4": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#statement-object-field"
+        }
+      ]
+    },
+    "statement-object-field": {
+      "name": "meta.field.declaration.the",
+      "begin": "([_[:alpha:]]\\w*)\\s*(:)",
+      "beginCaptures": {
+        "1": {
+          "name": "meta.definition.property.the variable.object.property.the"
+        },
+        "2": {
+          "name": "keyword.operator.type.annotation.the"
+        }
+      },
+      "end": "(?=\\}|$|\\/[\\/\\*])",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    "statement-return": {
+      "name": "meta.return.the",
+      "begin": "(?<!\\w|\\.)return(?!\\w|\\.)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.flow.the"
+        }
+      },
+      "end": "(?=[;}]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "statement-variable-declaration": {
+      "patterns": [
+        {
+          "name": "meta.var.expr.the",
+          "begin": "(?:((?<!\\w|\\.)mut)\\s+)?([_[:alpha:]]\\w*)\\s*(:=)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.the"
+            },
+            "2": {
+              "name": "meta.definition.variable.the variable.other.the"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.the"
+            }
+          },
+          "end": "(?=[);}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#expressions"
+            }
+          ]
+        },
+        {
+          "name": "meta.var.expr.the",
+          "begin": "(?:((?<!\\w|\\.)mut)\\s+)?([_[:alpha:]]\\w*)\\s*(:)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.the"
+            },
+            "2": {
+              "name": "meta.definition.variable.the variable.other.the"
+            },
+            "3": {
+              "name": "keyword.operator.type.annotation.the"
+            }
+          },
+          "end": "(?=[);}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "begin": "(?<!=|!)(=)(?!=)",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.operator.assignment.the"
+                }
+              },
+              "end": "(?=[);}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#expressions"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "types": {
       "patterns": [
         {

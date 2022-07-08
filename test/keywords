@@ -57,9 +57,6 @@ mut
 obj
 // <--- keyword.declaration.the
 
-return
-// <------ keyword.control.the
-
 throw
 // <----- keyword.control.catch-exception.the
 
