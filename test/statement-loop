@@ -3,15 +3,13 @@
 loop {}
 // <------- meta.loop.the
 // <---- keyword.control.loop.the
-//   ^ punctuation.definition.block.the
-//    ^ punctuation.definition.block.the
+//   ^^ meta.block.the
 
 loop true {}
 // <------------ meta.loop.the
 // <---- keyword.control.loop.the
 //   ^^^^ constant.language.boolean.true.the
-//        ^ punctuation.definition.block.the
-//         ^ punctuation.definition.block.the
+//        ^^ meta.block.the
 
 loop i < 10 {}
 // <-------------- meta.loop.the
@@ -19,8 +17,7 @@ loop i < 10 {}
 //   ^ variable.other.the
 //     ^ keyword.operator.relational.the
 //       ^^ constant.numeric.the
-//          ^ punctuation.definition.block.the
-//           ^ punctuation.definition.block.the
+//          ^^ meta.block.the
 
 loop mut i := 0; i < 10; i++ {}
 // <------------------------------- meta.loop.the
@@ -33,8 +30,7 @@ loop mut i := 0; i < 10; i++ {}
 //                     ^ punctuation.terminator.statement.the
 //                       ^ variable.other.the
 //                        ^^ keyword.operator.increment.the
-//                           ^ punctuation.definition.block.the
-//                            ^ punctuation.definition.block.the
+//                           ^^ meta.block.the
 
 loop ; j < 10; j++ {}
 // <--------------------- meta.loop.the
@@ -46,8 +42,7 @@ loop ; j < 10; j++ {}
 //           ^ punctuation.terminator.statement.the
 //             ^ variable.other.the
 //              ^^ keyword.operator.increment.the
-//                 ^ punctuation.definition.block.the
-//                  ^ punctuation.definition.block.the
+//                 ^^ meta.block.the
 
 
 loop ; k < 10; {}
@@ -58,8 +53,7 @@ loop ; k < 10; {}
 //       ^ keyword.operator.relational.the
 //         ^^ constant.numeric.the
 //           ^ punctuation.terminator.statement.the
-//             ^ punctuation.definition.block.the
-//              ^ punctuation.definition.block.the
+//             ^^ meta.block.the
 
 loop mut i := 0; i < 10; i++ { test(i) }
 // <---------------------------------------- meta.loop.the
@@ -72,9 +66,7 @@ loop mut i := 0; i < 10; i++ { test(i) }
 //                     ^ punctuation.terminator.statement.the
 //                       ^ variable.other.the
 //                        ^^ keyword.operator.increment.the
-//                           ^ punctuation.definition.block.the
-//                             ^^^^^^^ meta.function-call.the
-//                                     ^ punctuation.definition.block.the
+//                           ^^^^^^^^^^^ meta.block.the
 
 loop mut i := 0; i < 10; i++ {
 // <------------------------------- meta.loop.the
@@ -87,13 +79,11 @@ loop mut i := 0; i < 10; i++ {
 //                     ^ punctuation.terminator.statement.the
 //                       ^ variable.other.the
 //                        ^^ keyword.operator.increment.the
-//                           ^ punctuation.definition.block.the
+//                           ^ meta.block.the
   test(i)
-// <--------- meta.loop.the
-// <~~------- meta.function-call.the
+// <--------- meta.loop.the meta.block.the
 }
-// <- meta.loop.the
-// <- punctuation.definition.block.the
+// <- meta.loop.the meta.block.the
 
 loop (mut i := 0; i < 10; i++) {}
 // <---------------------------------------- meta.loop.the
@@ -108,5 +98,11 @@ loop (mut i := 0; i < 10; i++) {}
 //                        ^ variable.other.the
 //                         ^^ keyword.operator.increment.the
 //                           ^ meta.brace.round.the
-//                             ^ punctuation.definition.block.the
-//                              ^ punctuation.definition.block.the
+//                             ^^ meta.block.the
+
+loop true {
+// <----------- meta.loop.the
+  loop true {}
+// <~~----------- meta.loop.the meta.loop.the
+}
+// <- meta.loop.the

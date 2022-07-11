@@ -1,0 +1,72 @@
+// SYNTAX TEST "source.the"
+
+fn test () {}
+// <------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^ meta.definition.function.the entity.name.function.the
+//      ^^ meta.parameters.the
+//         ^^ meta.block.the
+
+async fn async_test () {}
+// <------------------------- meta.function.the
+// <----- storage.modifier.async.the
+//    ^^ storage.type.function.the
+//       ^^^^^^^^^^ meta.definition.function.the entity.name.function.the
+//                  ^^ meta.parameters.the
+//                     ^^ meta.block.the
+
+export fn test () {}
+// <-------------------- meta.function.the
+// <------ keyword.control.export.the
+//     ^^ storage.type.function.the
+//        ^^^^ meta.definition.function.the entity.name.function.the
+//             ^^ meta.parameters.the
+//                ^^ meta.block.the
+
+export async fn async_test () {}
+// <-------------------------------- meta.function.the
+// <------ keyword.control.export.the
+//     ^^^^^ storage.modifier.async.the
+//           ^^ storage.type.function.the
+//              ^^^^^^^^^^ meta.definition.function.the entity.name.function.the
+//                         ^^ meta.parameters.the
+//                            ^^ meta.block.the
+
+fn test (a: int) {}
+// <------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^ meta.definition.function.the entity.name.function.the
+//      ^^^^^^^^ meta.parameters.the
+//               ^^ meta.block.the
+
+fn test () int { return 2 }
+// <------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^ meta.definition.function.the entity.name.function.the
+//      ^^ meta.parameters.the
+//        ^^^^^ meta.return.type.the
+//             ^^^^^^^^^^^^ meta.block.the
+
+fn test1 () int {
+// <----------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^^ meta.definition.function.the entity.name.function.the
+//       ^^ meta.parameters.the
+//         ^^^^^ meta.return.type.the
+//              ^ meta.block.the
+  fn test2 () int {
+// <------------------- meta.function.the meta.block.the
+// <~~----------------- meta.function.the meta.block.the meta.function.the
+// <~~-- meta.block.the storage.type.function.the
+//   ^^^^^ meta.block.the meta.definition.function.the entity.name.function.the
+//         ^^ meta.block.the meta.parameters.the
+//           ^^^^^ meta.block.the meta.return.type.the
+//                ^ meta.block.the meta.block.the
+    return 2
+// <------------ meta.function.the meta.block.the meta.function.the meta.block.the
+  }
+// <--- meta.function.the meta.block.the meta.function.the meta.block.the
+  return test2()
+// <---------------- meta.block.the
+}
+// <- meta.block.the

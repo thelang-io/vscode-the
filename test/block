@@ -1,0 +1,27 @@
+// SYNTAX TEST "source.the"
+
+main {}
+//   ^^ meta.block.the
+//   ^ punctuation.definition.block.the
+//    ^ punctuation.definition.block.the
+
+main {
+//   ^ meta.block.the punctuation.definition.block.the
+  test()
+// <-------- meta.block.the
+  a = 10
+// <-------- meta.block.the
+}
+// <- meta.block.the punctuation.definition.block.the
+
+main {
+//   ^ meta.block.the punctuation.definition.block.the
+  loop true {
+//          ^ meta.block.the meta.block.the punctuation.definition.block.the
+    break
+// <--------- meta.block.the meta.block.the
+  }
+// <--- meta.block.the meta.block.the
+// <~~- punctuation.definition.block.the
+}
+// <- meta.block.the punctuation.definition.block.the

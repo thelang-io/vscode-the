@@ -6,38 +6,38 @@ Test{}
 //  ^ punctuation.definition.block.the
 //   ^ punctuation.definition.block.the
 
-Test{a: 10}
-// <----------- meta.objectliteral.the
-// <---- entity.name.type.object.the
-//  ^ punctuation.definition.block.the
-//   ^^^^^ meta.object.member.the
-//   ^ meta.object-literal.key.the
-//    ^ punctuation.separator.key-value.the
-//      ^^ constant.numeric.the
-//        ^ punctuation.definition.block.the
-
 Test{a: 10, b: "test"}
 // <---------------------- meta.objectliteral.the
 // <---- entity.name.type.object.the
 //  ^ punctuation.definition.block.the
+//   ^^^^^ meta.object.member.the
+//        ^ punctuation.separator.comma.the
+//          ^^^^^^^^^ meta.object.member.the
 //                   ^ punctuation.definition.block.the
 
-Test{a: Test2{b: 10}}
+Test{a: Test2{c: 10}}
 // <--------------------- meta.objectliteral.the
 // <---- entity.name.type.object.the
 //  ^ punctuation.definition.block.the
+//   ^^^^^^^^^^^^^^^ meta.object.member.the
+//      ^^^^^^^^^^^^ meta.objectliteral.the
+//      ^^^^^ entity.name.type.object.the
+//           ^ punctuation.definition.block.the
+//            ^^^^^ meta.objectliteral.the
+//                 ^ punctuation.definition.block.the
 //                  ^ punctuation.definition.block.the
 
-Test{
+Test1{
 // <------ meta.objectliteral.the
-// <---- entity.name.type.object.the
-//  ^ punctuation.definition.block.the
-  a: 10
+// <----- entity.name.type.object.the
+//   ^ punctuation.definition.block.the
+  a: 10,
 // <------- meta.objectliteral.the
 // <~~----- meta.object.member.the
-// <~~- meta.object-literal.key.the
-// ^ punctuation.separator.key-value.the
-//   ^^ constant.numeric.the
+//     ^ punctuation.separator.comma.the
+  b: Test2{c: 10}
+// <----------------- meta.objectliteral.the
+// <~~--------------- meta.object.member.the
 }
 // <- meta.objectliteral.the
 // <- punctuation.definition.block.the

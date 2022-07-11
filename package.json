@@ -1,16 +1,15 @@
 {
   "name": "the",
   "displayName": "The Programming Language",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "The Programming Language Support",
   "homepage": "https://the-lang.io/",
   "author": "Aaron Delasy <aaron@thelang.io>",
   "icon": "media/logo-color.png",
   "license": "SEE LICENSE IN LICENSE",
   "main": "build/extension.js",
-  "preview": true,
   "private": true,
-  "publisher": "thelang",
+  "publisher": "the",
   "repository": "github:thelang-io/vscode-the",
   "activationEvents": [
     "onLanguage:the"
