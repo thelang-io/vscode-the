@@ -1,0 +1,9 @@
+// SYNTAX TEST "source.the"
+
+fn test () int { return 2 }
+//        ^^^^^ meta.return.type.the
+//         ^^^ storage.type.built-in.primitive.the
+
+fn test () Test {}
+//        ^^^^^^ meta.return.type.the
+//         ^^^^ entity.name.type.the

@@ -1,0 +1,24 @@
+// SYNTAX TEST "source.the"
+
+obj Human {age: int}
+//         ^^^^^^^^ meta.field.declaration.the
+//         ^^^ meta.definition.property.the variable.object.property.the
+//            ^^^^^ meta.type.annotation.the
+
+obj Test {
+  x: int
+// <~~------ meta.field.declaration.the
+// <~~- meta.definition.property.the variable.object.property.the
+// ^^^^^ meta.type.annotation.the
+}
+
+obj Human {
+  age: int
+// <~~-------- meta.field.declaration.the
+// <~~--- meta.definition.property.the variable.object.property.the
+//   ^^^^^ meta.type.annotation.the
+  gender: HumanGender
+// <~~------------------- meta.field.declaration.the
+// <~~------ meta.definition.property.the variable.object.property.the
+//      ^^^^^^^^^^^^^ meta.type.annotation.the
+}

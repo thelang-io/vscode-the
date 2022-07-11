@@ -1,0 +1,11 @@
+// SYNTAX TEST "source.the"
+
+test: str
+//  ^^^^^ meta.type.annotation.the
+//  ^ keyword.operator.type.annotation.the
+//    ^^^ storage.type.built-in.primitive.the
+
+test: i64 = 10
+//  ^^^^^ meta.type.annotation.the
+//  ^ keyword.operator.type.annotation.the
+//    ^^^ storage.type.built-in.primitive.the
