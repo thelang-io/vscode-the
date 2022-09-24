@@ -526,29 +526,70 @@
       ]
     },
     "statement-if": {
-      "name": "meta.if.the",
-      "begin": "(?<!\\w|\\.)(?=(if)\\s+([^{]*)\\s*\\{)",
-      "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "(?<!\\w|\\.)(if)\\s+",
-          "beginCaptures": {
-            "1": {
-              "name": "keyword.control.conditional.the"
-            }
-          },
-          "end": "(?=\\{)",
+          "name": "meta.if.the",
+          "begin": "(?<!\\w|\\.)(?=(if)\\s+([^{]*)\\s*\\{)",
+          "end": "(?<=\\})",
           "patterns": [
             {
-              "include": "#comments"
+              "begin": "(?<!\\w|\\.)(if)\\s+",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.conditional.the"
+                }
+              },
+              "end": "(?=\\{)",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#expressions"
+                }
+              ]
             },
             {
-              "include": "#expressions"
+              "include": "#block"
             }
           ]
         },
         {
-          "include": "#block"
+          "name": "meta.elif.the",
+          "begin": "(?<!\\w|\\.)(?=(elif)\\s+([^{]*)\\s*\\{)",
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "begin": "(?<!\\w|\\.)(elif)\\s+",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.conditional.the"
+                }
+              },
+              "end": "(?=\\{)",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#expressions"
+                }
+              ]
+            },
+            {
+              "include": "#block"
+            }
+          ]
+        },
+        {
+          "name": "meta.else.the",
+          "begin": "(?<!\\w|\\.)(?=(else)\\s*\\{)",
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "include": "#block"
+            }
+          ]
         }
       ]
     },

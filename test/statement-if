@@ -50,3 +50,20 @@ if i < 10 {
 // <~~----------- meta.if.the meta.if.the
 }
 // <- meta.if.the
+
+if i < 10 {
+// <----------- meta.if.the
+  test1()
+// <--------- meta.if.the
+} elif i > 10 {
+// <- meta.if.the
+// <~~------------- meta.elif.the
+  test2()
+// <--------- meta.elif.the
+} else {
+// <- meta.elif.the
+// <~~------ meta.else.the
+  test3()
+// <--------- meta.else.the
+}
+// <- meta.else.the
