@@ -87,6 +87,9 @@
           "include": "#expression-object"
         },
         {
+          "include": "#expression-reference"
+        },
+        {
           "include": "#expression-ternary"
         },
         {
@@ -227,6 +230,24 @@
         }
       ]
     },
+    "expression-reference": {
+      "name": "meta.reference.the",
+      "begin": "(?<!\\w|\\.)(ref)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.reference.the"
+        }
+      },
+      "end": "(?=[;}]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
     "expression-ternary": {
       "begin": "\\?",
       "beginCaptures": {
@@ -277,7 +298,7 @@
         },
         {
           "name": "storage.modifier.the",
-          "match": "(?<!\\w|\\.)(mut)(?!\\w|\\.)"
+          "match": "(?<!\\w|\\.)(mut|ref)(?!\\w|\\.)"
         }
       ]
     },

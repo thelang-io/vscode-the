@@ -1,0 +1,6 @@
+// SYNTAX TEST "source.the"
+
+ref test
+// <-------- meta.reference.the
+// <-- keyword.operator.reference.the
+//  ^^^^ variable.other.the
