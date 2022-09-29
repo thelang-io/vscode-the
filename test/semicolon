@@ -1,0 +1,85 @@
+// SYNTAX TEST "source.the"
+
+test.prop;
+//       ^ punctuation.terminator.statement.the
+
+a := [10];
+//       ^ punctuation.terminator.statement.the
+
+test = 10;
+//       ^ punctuation.terminator.statement.the
+
+test / 10;
+//       ^ punctuation.terminator.statement.the
+
+test();
+//    ^ punctuation.terminator.statement.the
+
+false;
+//   ^ punctuation.terminator.statement.the
+
+nil;
+// ^ punctuation.terminator.statement.the
+
+true;
+//  ^ punctuation.terminator.statement.the
+
+"test";
+//    ^ punctuation.terminator.statement.the
+
+'a';
+// ^ punctuation.terminator.statement.the
+
+10;
+// <~~- punctuation.terminator.statement.the
+
+10.10;
+//   ^ punctuation.terminator.statement.the
+
+Test{a: 10};
+//         ^ punctuation.terminator.statement.the
+
+ref test;
+//      ^ punctuation.terminator.statement.the
+
+true ? 1 : 2;
+//          ^ punctuation.terminator.statement.the
+
+!test;
+//   ^ punctuation.terminator.statement.the
+
+break;
+//   ^ punctuation.terminator.statement.the
+
+continue;
+//      ^ punctuation.terminator.statement.the
+
+fn test () {};
+//           ^ punctuation.terminator.statement.the
+
+if true {};
+//        ^ punctuation.terminator.statement.the
+
+loop true {};
+//          ^ punctuation.terminator.statement.the
+
+main {};
+//     ^ punctuation.terminator.statement.the
+
+obj Test{age: int};
+//                ^ punctuation.terminator.statement.the
+
+obj Test{age: int;}
+//               ^ punctuation.terminator.statement.the
+
+return;
+//    ^ punctuation.terminator.statement.the
+
+return 255;
+//        ^ punctuation.terminator.statement.the
+
+test := 10;
+//        ^ punctuation.terminator.statement.the
+
+test: str;
+//       ^ punctuation.terminator.statement.the

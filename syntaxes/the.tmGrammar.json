@@ -476,6 +476,9 @@
         },
         {
           "include": "#expressions"
+        },
+        {
+          "include": "#punctuation-semicolon"
         }
       ]
     },
@@ -728,6 +731,9 @@
         },
         {
           "include": "#statement-object-field"
+        },
+        {
+          "include": "#punctuation-semicolon"
         }
       ]
     },
@@ -739,7 +745,7 @@
           "name": "meta.definition.property.the variable.object.property.the"
         }
       },
-      "end": "(?=\\}|$|\\/[\\/\\*])",
+      "end": "(?=;|\\}|$|\\/[\\/\\*])",
       "patterns": [
         {
           "include": "#type-annotation"
