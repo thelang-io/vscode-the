@@ -78,6 +78,9 @@
     "expressions": {
       "patterns": [
         {
+          "include": "#expression-array"
+        },
+        {
           "include": "#expression-call"
         },
         {
@@ -128,6 +131,32 @@
     "expression-access": {
       "name": "variable.other.the",
       "match": "([_[:alpha:]]\\w*)(\\s*\\.\\s*([_[:alpha:]]\\w*))*"
+    },
+    "expression-array": {
+      "name": "meta.array.literal.the",
+      "begin": "\\s*(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "meta.brace.square.the"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.square.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#expressions"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
     },
     "expression-call": {
       "name": "meta.function-call.the",

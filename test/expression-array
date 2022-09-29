@@ -1,0 +1,40 @@
+// SYNTAX TEST "source.the"
+
+a := []
+//   ^^ meta.array.literal.the
+//   ^ meta.brace.square.the
+//    ^ meta.brace.square.the
+
+b := [10]
+//   ^^^^ meta.array.literal.the
+//   ^ meta.brace.square.the
+//    ^^ constant.numeric.the
+//      ^ meta.brace.square.the
+
+c := [true, 'a', "test"]
+//   ^^^^^^^^^^^^^^^^^^^ meta.array.literal.the
+//   ^ meta.brace.square.the
+//    ^^^^ constant.language.boolean.true.the
+//        ^ punctuation.separator.comma.the
+//          ^^^ string.quoted.single.the
+//             ^ punctuation.separator.comma.the
+//               ^^^^^ string.quoted.double.the
+//                     ^ meta.brace.square.the
+
+d := [
+//   ^ meta.array.literal.the
+//   ^ meta.brace.square.the
+  true,
+// <------- meta.array.literal.the
+// <~~---- constant.language.boolean.true.the
+//    ^ punctuation.separator.comma.the
+  'a',
+// <------ meta.array.literal.the
+// <~~--- string.quoted.single.the
+//   ^ punctuation.separator.comma.the
+  "test"
+// <-------- meta.array.literal.the
+// <~~----- string.quoted.double.the
+]
+// <------ meta.array.literal.the
+// <- meta.brace.square.the
