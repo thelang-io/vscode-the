@@ -7,6 +7,14 @@ fn test (a: int) {}
 //        ^^^^^ meta.type.annotation.the
 //             ^ punctuation.definition.parameters.end.the
 
+fn test (mut a: int) {}
+//      ^^^^^^^^^^^^ meta.parameters.the
+//       ^^^ storage.modifier.the
+//      ^ punctuation.definition.parameters.begin.the
+//           ^ variable.parameter.the
+//            ^^^^^ meta.type.annotation.the
+//                 ^ punctuation.definition.parameters.end.the
+
 fn test (a: int, mut b := 2) {}
 //      ^^^^^^^^^^^^^^^^^^^^ meta.parameters.the
 //      ^ punctuation.definition.parameters.begin.the
