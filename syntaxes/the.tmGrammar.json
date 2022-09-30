@@ -129,12 +129,43 @@
       ]
     },
     "expression-access": {
-      "name": "variable.other.the",
-      "match": "([_[:alpha:]]\\w*)(\\s*\\.\\s*([_[:alpha:]]\\w*))*"
+      "patterns": [
+        {
+          "name": "variable.other.the",
+          "match": "[_[:alpha:]]\\w*"
+        },
+        {
+          "name": "punctuation.accessor.the",
+          "match": "\\.\\s*[_[:alpha:]]\\w*"
+        },
+        {
+          "name": "punctuation.accessor.the",
+          "begin": "(?<=[_[:alpha:]]\\w*|\\])\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.square.the"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.square.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#expressions"
+            }
+          ]
+        }
+      ]
     },
     "expression-array": {
       "name": "meta.array.literal.the",
-      "begin": "\\s*(\\[)",
+      "begin": "(?<![_[:alpha:]]\\w*|\\])(\\[)",
       "beginCaptures": {
         "1": {
           "name": "meta.brace.square.the"
@@ -148,10 +179,10 @@
       },
       "patterns": [
         {
-          "include": "#expressions"
+          "include": "#comments"
         },
         {
-          "include": "#comments"
+          "include": "#expressions"
         },
         {
           "include": "#punctuation-comma"

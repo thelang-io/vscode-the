@@ -6,7 +6,8 @@ test = 10
 //     ^^ constant.numeric.the
 
 test.prop = "test"
-// <--------- variable.other.the
+// <---- variable.other.the
+//  ^^^^^ punctuation.accessor.the
 //        ^ keyword.operator.assignment.the
 //          ^^^^^^ string.quoted.double.the
 

@@ -4,4 +4,29 @@ test
 // <---- variable.other.the
 
 test.prop
-// <--------- variable.other.the
+// <---- variable.other.the
+//  ^^^^^ punctuation.accessor.the
+
+test.prop1.prop2.prop3
+// <---- variable.other.the
+//  ^^^^^^ punctuation.accessor.the
+//        ^^^^^^ punctuation.accessor.the
+//              ^^^^^^ punctuation.accessor.the
+
+test[0]
+// <---- variable.other.the
+//  ^^^ punctuation.accessor.the
+
+test[len]
+// <---- variable.other.the
+//  ^^^^^ punctuation.accessor.the
+
+test.prop[0]
+// <---- variable.other.the
+//  ^^^^^ punctuation.accessor.the
+//       ^^^ punctuation.accessor.the
+
+test.prop[len]
+// <---- variable.other.the
+//  ^^^^^ punctuation.accessor.the
+//       ^^^^^ punctuation.accessor.the

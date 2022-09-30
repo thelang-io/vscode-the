@@ -1,10 +1,10 @@
 // SYNTAX TEST "source.the"
 
-test.prop;
-//       ^ punctuation.terminator.statement.the
+test;
+//  ^ punctuation.terminator.statement.the
 
-a := [10];
-//       ^ punctuation.terminator.statement.the
+[10];
+//  ^ punctuation.terminator.statement.the
 
 test = 10;
 //       ^ punctuation.terminator.statement.the
