@@ -1,0 +1,11 @@
+// SYNTAX TEST "source.the"
+
+test: ref int
+//    ^^^^^^^ storage.type.reference.the
+//    ^^^ keyword.operator.reference.the
+//        ^^^ storage.type.built-in.primitive.the
+
+test: ref Human
+//    ^^^^^^^^^ storage.type.reference.the
+//    ^^^ keyword.operator.reference.the
+//        ^^^^^ entity.name.type.the

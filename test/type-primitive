@@ -1,0 +1,4 @@
+// SYNTAX TEST "source.the"
+
+test: Human
+//    ^^^^^ entity.name.type.the

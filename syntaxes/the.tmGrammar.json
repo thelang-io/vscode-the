@@ -828,12 +828,35 @@
     "types": {
       "patterns": [
         {
-          "name": "storage.type.built-in.primitive.the",
-          "match": "(?<!\\w|\\.)(any|bool|byte|char|f(?:32|64)|float|i(?:8|16|32|64)|int|str|u(?:8|16|32|64)|void)(?!\\w|\\.)"
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "meta.brace.round.the"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "meta.brace.round.the"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#types"
+            }
+          ]
         },
         {
-          "name": "entity.name.type.the",
-          "match": "[_[:alpha:]]\\w*"
+          "include": "#type-reference"
+        },
+        {
+          "include": "#type-primitive-builtin"
+        },
+        {
+          "include": "#type-primitive"
         }
       ]
     },
@@ -846,6 +869,32 @@
         }
       },
       "end": "(?<!:)((?=$|^|[,);\\}\\]])|(?==))",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    "type-primitive": {
+      "name": "entity.name.type.the",
+      "match": "[_[:alpha:]]\\w*"
+    },
+    "type-primitive-builtin": {
+      "name": "storage.type.built-in.primitive.the",
+      "match": "(?<!\\w|\\.)(any|bool|byte|char|f(?:32|64)|float|i(?:8|16|32|64)|int|str|u(?:8|16|32|64)|void)(?!\\w|\\.)"
+    },
+    "type-reference": {
+      "name": "storage.type.reference.the",
+      "begin": "(?<!\\w|\\.)(ref)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.reference.the"
+        }
+      },
+      "end": "(?=[;}]|$)",
       "patterns": [
         {
           "include": "#comments"

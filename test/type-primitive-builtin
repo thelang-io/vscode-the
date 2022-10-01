@@ -50,6 +50,3 @@ test: u64
 
 test: void
 //    ^^^^ storage.type.built-in.primitive.the
-
-test: Human
-//    ^^^^^ entity.name.type.the
