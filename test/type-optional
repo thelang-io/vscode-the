@@ -1,0 +1,35 @@
+// SYNTAX TEST "source.the"
+
+test: int?
+//    ^^^ storage.type.built-in.primitive.the
+//       ^ storage.type.optional.the keyword.operator.optional.the
+
+test: Human?
+//    ^^^^^ entity.name.type.the
+//         ^ storage.type.optional.the keyword.operator.optional.the
+
+test: int[]?
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^ storage.type.array.the
+//       ^ meta.brace.square.the
+//        ^ meta.brace.square.the
+//         ^ storage.type.optional.the keyword.operator.optional.the
+
+test: Human[]?
+//    ^^^^^ entity.name.type.the
+//         ^^ storage.type.array.the
+//         ^ meta.brace.square.the
+//          ^ meta.brace.square.the
+//           ^ storage.type.optional.the keyword.operator.optional.the
+
+test: (ref int)?
+//    ^ meta.brace.round.the
+//     ^^^^^^^ storage.type.reference.the
+//            ^ meta.brace.round.the
+//             ^ storage.type.optional.the keyword.operator.optional.the
+
+test: (ref Human)?
+//    ^ meta.brace.round.the
+//     ^^^^^^^^^ storage.type.reference.the
+//              ^ meta.brace.round.the
+//               ^ storage.type.optional.the keyword.operator.optional.the

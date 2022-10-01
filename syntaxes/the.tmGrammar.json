@@ -863,6 +863,9 @@
           "include": "#type-array"
         },
         {
+          "include": "#type-optional"
+        },
+        {
           "include": "#type-primitive-builtin"
         },
         {
@@ -898,16 +901,34 @@
         },
         "1": {
           "name": "meta.brace.square.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
         },
-        "patterns": [
-          {
-            "include": "#comments"
-          },
-          {
-            "include": "#types"
-          }
-        ]
-      }
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    "type-optional": {
+      "name": "storage.type.optional.the",
+      "begin": "(?=\\?)",
+      "end": "(\\?)",
+      "endCaptures": {
+        "0": {
+          "name": "keyword.operator.optional.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        }
+      ]
     },
     "type-primitive": {
       "name": "entity.name.type.the",

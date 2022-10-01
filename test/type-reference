@@ -23,3 +23,13 @@ test: ref Human[]
 //             ^^ storage.type.array.the
 //             ^ meta.brace.square.the
 //              ^ meta.brace.square.the
+
+test: ref int?
+//    ^^^^^^^^^ storage.type.reference.the
+//        ^^^ storage.type.built-in.primitive.the
+//           ^ storage.type.optional.the keyword.operator.optional.the
+
+test: ref Human?
+//    ^^^^^^^^^^^ storage.type.reference.the
+//        ^^^^^ entity.name.type.the
+//             ^ storage.type.optional.the keyword.operator.optional.the
