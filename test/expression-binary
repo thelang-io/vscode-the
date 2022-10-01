@@ -1,100 +1,100 @@
 // SYNTAX TEST "source.the"
 
 test / 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.arithmetic.the
 //     ^^ constant.numeric.the
 
 test % 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.arithmetic.the
 //     ^^ constant.numeric.the
 
 test * 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.arithmetic.the
 //     ^^ constant.numeric.the
 
 test + 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.arithmetic.the
 //     ^^ constant.numeric.the
 
 test - 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.arithmetic.the
 //     ^^ constant.numeric.the
 
 test << 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.bitwise.shift.the
 //      ^^ constant.numeric.the
 
 test >> 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.bitwise.shift.the
 //      ^^ constant.numeric.the
 
 test <= 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.relational.the
 //      ^^ constant.numeric.the
 
 test < 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.relational.the
 //     ^^ constant.numeric.the
 
 test >= 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.relational.the
 //      ^^ constant.numeric.the
 
 test > 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.relational.the
 //     ^^ constant.numeric.the
 
 test == 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.comparison.the
 //      ^^ constant.numeric.the
 
 test != 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.comparison.the
 //      ^^ constant.numeric.the
 
 test & 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.bitwise.the
 //     ^^ constant.numeric.the
 
 test ^ 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.bitwise.the
 //     ^^ constant.numeric.the
 
 test | 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^ keyword.operator.bitwise.the
 //     ^^ constant.numeric.the
 
 test && 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.logical.the
 //      ^^ constant.numeric.the
 
 test || 10
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 //   ^^ keyword.operator.logical.the
 //      ^^ constant.numeric.the
 
 test1 +
-// <----- variable.other.the
+// <----- variable.other.readwrite.the
 //    ^ keyword.operator.arithmetic.the
   test
-// <~~----- variable.other.the
+// <~~----- variable.other.readwrite.the
 
 ((1 + 2) / 3 * 4) - 10
 // <- meta.brace.round.the

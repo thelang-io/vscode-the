@@ -131,18 +131,25 @@
     "expression-access": {
       "patterns": [
         {
-          "name": "variable.other.the",
+          "name": "variable.other.readwrite.the",
           "match": "[_[:alpha:]]\\w*"
         },
         {
-          "name": "punctuation.accessor.the",
-          "match": "\\.\\s*[_[:alpha:]]\\w*"
+          "name": "",
+          "match": "(\\.)(\\s*[_[:alpha:]]\\w*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.accessor.the"
+            },
+            "2": {
+              "name": "variable.other.property.the"
+            }
+          }
         },
         {
-          "name": "punctuation.accessor.the",
-          "begin": "(?<=[_[:alpha:]]\\w*|\\])\\[",
+          "begin": "(?<=[_[:alpha:]]\\w*|\\])\\s*(\\[)",
           "beginCaptures": {
-            "0": {
+            "1": {
               "name": "meta.brace.square.the"
             }
           },
@@ -809,7 +816,7 @@
           "name": "storage.modifier.the"
         },
         "2": {
-          "name": "meta.definition.variable.the variable.other.the"
+          "name": "meta.definition.variable.the variable.other.readwrite.the"
         }
       },
       "end": "(?=[);}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",

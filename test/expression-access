@@ -1,32 +1,42 @@
 // SYNTAX TEST "source.the"
 
 test
-// <---- variable.other.the
+// <---- variable.other.readwrite.the
 
 test.prop
-// <---- variable.other.the
-//  ^^^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ punctuation.accessor.the
+//   ^^^^ variable.other.property.the
 
 test.prop1.prop2.prop3
-// <---- variable.other.the
-//  ^^^^^^ punctuation.accessor.the
-//        ^^^^^^ punctuation.accessor.the
-//              ^^^^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ punctuation.accessor.the
+//   ^^^^^ variable.other.property.the
+//        ^ punctuation.accessor.the
+//         ^^^^^ variable.other.property.the
+//              ^ punctuation.accessor.the
+//               ^^^^^ variable.other.property.the
 
 test[0]
-// <---- variable.other.the
-//  ^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ meta.brace.square.the
+//    ^ meta.brace.square.the
 
 test[len]
-// <---- variable.other.the
-//  ^^^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ meta.brace.square.the
+//      ^ meta.brace.square.the
 
 test.prop[0]
-// <---- variable.other.the
-//  ^^^^^ punctuation.accessor.the
-//       ^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ punctuation.accessor.the
+//   ^^^^ variable.other.property.the
+//       ^ meta.brace.square.the
+//         ^ meta.brace.square.the
 
 test.prop[len]
-// <---- variable.other.the
-//  ^^^^^ punctuation.accessor.the
-//       ^^^^^ punctuation.accessor.the
+// <---- variable.other.readwrite.the
+//  ^ punctuation.accessor.the
+//   ^^^^ variable.other.property.the
+//       ^ meta.brace.square.the
+//           ^ meta.brace.square.the

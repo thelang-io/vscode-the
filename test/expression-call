@@ -16,14 +16,14 @@ test(a)
 // <-------- meta.function-call.the
 // <---- entity.name.function.the
 //  ^ meta.brace.round.the
-//   ^ variable.other.the
+//   ^ variable.other.readwrite.the
 //    ^ meta.brace.round.the
 
 test(a, 1)
 // <---------- meta.function-call.the
 // <---- entity.name.function.the
 //  ^ meta.brace.round.the
-//   ^ variable.other.the
+//   ^ variable.other.readwrite.the
 //    ^ punctuation.separator.comma.the
 //      ^ constant.numeric.the
 //       ^ meta.brace.round.the
@@ -32,7 +32,7 @@ test(a, 2, "test")
 // <------------------- meta.function-call.the
 // <---- entity.name.function.the
 //  ^ meta.brace.round.the
-//   ^ variable.other.the
+//   ^ variable.other.readwrite.the
 //    ^ punctuation.separator.comma.the
 //      ^ constant.numeric.the
 //       ^ punctuation.separator.comma.the
@@ -46,7 +46,7 @@ test1(test2(a))
 //    ^^^^^^^^ meta.function-call.the
 //    ^^^^^ entity.name.function.the
 //         ^ meta.brace.round.the
-//          ^ variable.other.the
+//          ^ variable.other.readwrite.the
 //           ^ meta.brace.round.the
 //            ^ meta.brace.round.the
 

@@ -3,4 +3,4 @@
 ref test
 // <-------- meta.reference.the
 // <-- keyword.operator.reference.the
-//  ^^^^ variable.other.the
+//  ^^^^ variable.other.readwrite.the

@@ -14,7 +14,7 @@ loop true {}
 loop i < 10 {}
 // <-------------- meta.loop.the
 // <---- keyword.control.loop.the
-//   ^ variable.other.the
+//   ^ variable.other.readwrite.the
 //     ^ keyword.operator.relational.the
 //       ^^ constant.numeric.the
 //          ^^ meta.block.the
@@ -24,11 +24,11 @@ loop mut i := 0; i < 10; i++ {}
 // <---- keyword.control.loop.the
 //   ^^^^^^^^^^ meta.var.expr.the
 //             ^ punctuation.terminator.statement.the
-//               ^ variable.other.the
+//               ^ variable.other.readwrite.the
 //                 ^ keyword.operator.relational.the
 //                   ^^ constant.numeric.the
 //                     ^ punctuation.terminator.statement.the
-//                       ^ variable.other.the
+//                       ^ variable.other.readwrite.the
 //                        ^^ keyword.operator.increment.the
 //                           ^^ meta.block.the
 
@@ -36,11 +36,11 @@ loop ; j < 10; j++ {}
 // <--------------------- meta.loop.the
 // <---- keyword.control.loop.the
 //   ^ punctuation.terminator.statement.the
-//     ^ variable.other.the
+//     ^ variable.other.readwrite.the
 //       ^ keyword.operator.relational.the
 //         ^^ constant.numeric.the
 //           ^ punctuation.terminator.statement.the
-//             ^ variable.other.the
+//             ^ variable.other.readwrite.the
 //              ^^ keyword.operator.increment.the
 //                 ^^ meta.block.the
 
@@ -49,7 +49,7 @@ loop ; k < 10; {}
 // <----------------- meta.loop.the
 // <---- keyword.control.loop.the
 //   ^ punctuation.terminator.statement.the
-//     ^ variable.other.the
+//     ^ variable.other.readwrite.the
 //       ^ keyword.operator.relational.the
 //         ^^ constant.numeric.the
 //           ^ punctuation.terminator.statement.the
@@ -60,11 +60,11 @@ loop mut i := 0; i < 10; i++ { test(i) }
 // <---- keyword.control.loop.the
 //   ^^^^^^^^^^ meta.var.expr.the
 //             ^ punctuation.terminator.statement.the
-//               ^ variable.other.the
+//               ^ variable.other.readwrite.the
 //                 ^ keyword.operator.relational.the
 //                   ^^ constant.numeric.the
 //                     ^ punctuation.terminator.statement.the
-//                       ^ variable.other.the
+//                       ^ variable.other.readwrite.the
 //                        ^^ keyword.operator.increment.the
 //                           ^^^^^^^^^^^ meta.block.the
 
@@ -73,11 +73,11 @@ loop mut i := 0; i < 10; i++ {
 // <---- keyword.control.loop.the
 //   ^^^^^^^^^^ meta.var.expr.the
 //             ^ punctuation.terminator.statement.the
-//               ^ variable.other.the
+//               ^ variable.other.readwrite.the
 //                 ^ keyword.operator.relational.the
 //                   ^^ constant.numeric.the
 //                     ^ punctuation.terminator.statement.the
-//                       ^ variable.other.the
+//                       ^ variable.other.readwrite.the
 //                        ^^ keyword.operator.increment.the
 //                           ^ meta.block.the
   test(i)
@@ -91,11 +91,11 @@ loop (mut i := 0; i < 10; i++) {}
 //   ^ meta.brace.round.the
 //    ^^^^^^^^^^ meta.var.expr.the
 //              ^ punctuation.terminator.statement.the
-//                ^ variable.other.the
+//                ^ variable.other.readwrite.the
 //                  ^ keyword.operator.relational.the
 //                    ^^ constant.numeric.the
 //                      ^ punctuation.terminator.statement.the
-//                        ^ variable.other.the
+//                        ^ variable.other.readwrite.the
 //                         ^^ keyword.operator.increment.the
 //                           ^ meta.brace.round.the
 //                             ^^ meta.block.the

@@ -17,7 +17,7 @@ if 1 > 2 {}
 if i < 10 { test() }
 // <-------------------- meta.if.the
 // <-- keyword.control.conditional.the
-// ^ variable.other.the
+// ^ variable.other.readwrite.the
 //   ^ keyword.operator.relational.the
 //     ^^ constant.numeric.the
 //        ^^^^^^^^^^ meta.block.the
@@ -25,7 +25,7 @@ if i < 10 { test() }
 if i < 10 {
 // <----------- meta.if.the
 // <-- keyword.control.conditional.the
-// ^ variable.other.the
+// ^ variable.other.readwrite.the
 //   ^ keyword.operator.relational.the
 //     ^^ constant.numeric.the
 //        ^ meta.block.the
@@ -38,7 +38,7 @@ if (i < 10) { test() }
 // <-------------------- meta.if.the
 // <-- keyword.control.conditional.the
 // ^ meta.brace.round.the
-//  ^ variable.other.the
+//  ^ variable.other.readwrite.the
 //    ^ keyword.operator.relational.the
 //      ^^ constant.numeric.the
 //        ^ meta.brace.round.the
