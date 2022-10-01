@@ -860,6 +860,9 @@
           "include": "#type-reference"
         },
         {
+          "include": "#type-array"
+        },
+        {
           "include": "#type-primitive-builtin"
         },
         {
@@ -885,6 +888,27 @@
         }
       ]
     },
+    "type-array": {
+      "name": "storage.type.array.the",
+      "begin": "(?=\\[\\])",
+      "end": "(\\[)(\\])",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.square.the"
+        },
+        "1": {
+          "name": "meta.brace.square.the"
+        },
+        "patterns": [
+          {
+            "include": "#comments"
+          },
+          {
+            "include": "#types"
+          }
+        ]
+      }
+    },
     "type-primitive": {
       "name": "entity.name.type.the",
       "match": "[_[:alpha:]]\\w*"
@@ -901,7 +925,7 @@
           "name": "keyword.operator.reference.the"
         }
       },
-      "end": "(?=[;}]|$)",
+      "end": "(?=[;}\\)]|$)",
       "patterns": [
         {
           "include": "#comments"
