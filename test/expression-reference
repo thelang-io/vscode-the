@@ -2,5 +2,5 @@
 
 ref test
 // <-------- meta.reference.the
-// <-- keyword.operator.reference.the
+// <-- keyword.operator.expression.reference.the
 //  ^^^^ variable.other.readwrite.the

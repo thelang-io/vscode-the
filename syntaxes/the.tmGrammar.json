@@ -302,7 +302,7 @@
       "begin": "(?<!\\w|\\.)(ref)\\s+",
       "beginCaptures": {
         "1": {
-          "name": "keyword.operator.reference.the"
+          "name": "keyword.operator.expression.reference.the"
         }
       },
       "end": "(?=[;}]|$)",
@@ -360,7 +360,7 @@
           "match": "(?<!\\w|\\.)(const|enum|fn|main|obj|union)(?!\\w|\\.)"
         },
         {
-          "name": "keyword.operator.the",
+          "name": "keyword.operator.expression.is.the",
           "match": "(?<!\\w|\\.)(is)(?!\\w|\\.)"
         },
         {
@@ -1015,7 +1015,7 @@
       "begin": "(?<!\\w|\\.)(ref)\\s+",
       "beginCaptures": {
         "1": {
-          "name": "keyword.operator.reference.the"
+          "name": "keyword.operator.expression.reference.the"
         }
       },
       "end": "(?=[;}\\)]|$)",
