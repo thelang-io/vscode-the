@@ -1,35 +1,51 @@
 // SYNTAX TEST "source.the"
 
 test: ref int
-//    ^^^^^^^ storage.type.reference.the
+//    ^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.reference.the
 //        ^^^ storage.type.built-in.primitive.the
 
 test: ref Human
-//    ^^^^^^^^^ storage.type.reference.the
+//    ^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.reference.the
 //        ^^^^^ entity.name.type.the
 
 test: ref int[]
-//    ^^^^^^^^^ storage.type.reference.the
+//    ^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
 //        ^^^ storage.type.built-in.primitive.the
-//           ^^ storage.type.array.the
+//           ^^ meta.type.array.the
 //           ^ meta.brace.square.the
 //            ^ meta.brace.square.the
 
 test: ref Human[]
-//    ^^^^^^^^^^^ storage.type.reference.the
+//    ^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
 //        ^^^^^ entity.name.type.the
-//             ^^ storage.type.array.the
+//             ^^ meta.type.array.the
 //             ^ meta.brace.square.the
 //              ^ meta.brace.square.the
 
+test: ref fn (a: int, mut b: str) int
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
+//        ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//                                ^^^ storage.type.built-in.primitive.the
+
+test: ref fn (a: Test, mut b: Test) Test
+//    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
+//        ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//                                  ^^^^ entity.name.type.the
+
 test: ref int?
-//    ^^^^^^^^^ storage.type.reference.the
+//    ^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
 //        ^^^ storage.type.built-in.primitive.the
-//           ^ storage.type.optional.the keyword.operator.optional.the
+//           ^ meta.type.optional.the keyword.operator.optional.the
 
 test: ref Human?
-//    ^^^^^^^^^^^ storage.type.reference.the
+//    ^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.reference.the
 //        ^^^^^ entity.name.type.the
-//             ^ storage.type.optional.the keyword.operator.optional.the
+//             ^ meta.type.optional.the keyword.operator.optional.the

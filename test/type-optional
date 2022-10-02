@@ -2,34 +2,48 @@
 
 test: int?
 //    ^^^ storage.type.built-in.primitive.the
-//       ^ storage.type.optional.the keyword.operator.optional.the
+//       ^ meta.type.optional.the keyword.operator.optional.the
 
 test: Human?
 //    ^^^^^ entity.name.type.the
-//         ^ storage.type.optional.the keyword.operator.optional.the
+//         ^ meta.type.optional.the keyword.operator.optional.the
 
 test: int[]?
 //    ^^^ storage.type.built-in.primitive.the
-//       ^^ storage.type.array.the
+//       ^^ meta.type.array.the
 //       ^ meta.brace.square.the
 //        ^ meta.brace.square.the
-//         ^ storage.type.optional.the keyword.operator.optional.the
+//         ^ meta.type.optional.the keyword.operator.optional.the
 
 test: Human[]?
 //    ^^^^^ entity.name.type.the
-//         ^^ storage.type.array.the
+//         ^^ meta.type.array.the
 //         ^ meta.brace.square.the
 //          ^ meta.brace.square.the
-//           ^ storage.type.optional.the keyword.operator.optional.the
+//           ^ meta.type.optional.the keyword.operator.optional.the
+
+test: (fn (a: int, mut b: str) int)?
+//    ^ meta.brace.round.the
+//     ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//                             ^^^ storage.type.built-in.primitive.the
+//                                ^ meta.brace.round.the
+//                                 ^ meta.type.optional.the keyword.operator.optional.the
+
+test: (fn (a: Test, mut b: Test) Test)?
+//    ^ meta.brace.round.the
+//     ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//                               ^^^^ entity.name.type.the
+//                                   ^ meta.brace.round.the
+//                                    ^ meta.type.optional.the keyword.operator.optional.the
 
 test: (ref int)?
 //    ^ meta.brace.round.the
-//     ^^^^^^^ storage.type.reference.the
+//     ^^^^^^^ meta.type.reference.the
 //            ^ meta.brace.round.the
-//             ^ storage.type.optional.the keyword.operator.optional.the
+//             ^ meta.type.optional.the keyword.operator.optional.the
 
 test: (ref Human)?
 //    ^ meta.brace.round.the
-//     ^^^^^^^^^ storage.type.reference.the
+//     ^^^^^^^^^ meta.type.reference.the
 //              ^ meta.brace.round.the
-//               ^ storage.type.optional.the keyword.operator.optional.the
+//               ^ meta.type.optional.the keyword.operator.optional.the
