@@ -63,7 +63,28 @@ if i < 10 {
 } else {
 // <- meta.elif.the
 // <~~------ meta.else.the
+// <~~---- keyword.control.conditional.the
   test3()
 // <--------- meta.else.the
 }
 // <- meta.else.the
+
+if (true) {}
+// <------------ meta.if.the
+// <-- keyword.control.conditional.the
+// ^ meta.brace.round.the
+//  ^^^^ constant.language.boolean.true.the
+//      ^ meta.brace.round.the
+//        ^^ meta.block.the
+
+if (
+// <---- meta.if.the
+// <-- keyword.control.conditional.the
+// ^ meta.brace.round.the
+  true
+// <---------- meta.if.the
+// <~~---- constant.language.boolean.true.the
+) {}
+// <---- meta.if.the
+// <- meta.brace.round.the
+// <~~-- meta.block.the

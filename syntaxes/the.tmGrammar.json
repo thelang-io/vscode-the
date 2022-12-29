@@ -620,11 +620,11 @@
       "patterns": [
         {
           "name": "meta.if.the",
-          "begin": "(?<!\\w|\\.)(?=(if)\\s+([^{]*)\\s*\\{)",
+          "begin": "(?<!\\w|\\.)(?=(\\bif)\\s*)",
           "end": "(?<=\\})",
           "patterns": [
             {
-              "begin": "(?<!\\w|\\.)(if)\\s+",
+              "begin": "(?<!\\w|\\.)(\\bif)\\s*",
               "beginCaptures": {
                 "1": {
                   "name": "keyword.control.conditional.the"
@@ -647,11 +647,11 @@
         },
         {
           "name": "meta.elif.the",
-          "begin": "(?<!\\w|\\.)(?=(elif)\\s+([^{]*)\\s*\\{)",
+          "begin": "(?<!\\w|\\.)(?=(\\belif)\\s*)",
           "end": "(?<=\\})",
           "patterns": [
             {
-              "begin": "(?<!\\w|\\.)(elif)\\s+",
+              "begin": "(?<!\\w|\\.)(\\belif)\\s*",
               "beginCaptures": {
                 "1": {
                   "name": "keyword.control.conditional.the"
@@ -675,6 +675,11 @@
         {
           "name": "meta.else.the",
           "begin": "(?<!\\w|\\.)(?=(else)\\s*\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.conditional.the"
+            }
+          },
           "end": "(?<=\\})",
           "patterns": [
             {
@@ -686,11 +691,11 @@
     },
     "statement-loop": {
       "name": "meta.loop.the",
-      "begin": "(?<!\\w|\\.)(?=loop\\s+([^{]*)\\s*\\{)",
+      "begin": "(?<!\\w|\\.)(?=\\bloop\\s*)",
       "end": "(?<=\\})",
       "patterns": [
         {
-          "begin": "(?<!\\w|\\.)(loop)\\s*(?:(\\()\\s*)?",
+          "begin": "(?<!\\w|\\.)(\\bloop)\\s*(?:(\\()\\s*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.loop.the"

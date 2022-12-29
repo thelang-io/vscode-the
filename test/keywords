@@ -1,5 +1,11 @@
 // SYNTAX TEST "source.the"
 
+// elif - not possible
+// if - not possible
+// loop - not possible
+// ref - not possible
+// return - not possible
+
 async
 // <----- keyword.control.the
 
@@ -18,9 +24,6 @@ const
 continue
 // <-------- keyword.control.the
 
-elif
-// <---- keyword.control.the
-
 else
 // <---- keyword.control.the
 
@@ -36,17 +39,11 @@ fn
 from
 // <---- keyword.control.the
 
-if
-// <-- keyword.control.the
-
 import
 // <------ keyword.control.the
 
 is
 // <-- keyword.operator.expression.is.the
-
-loop
-// <---- keyword.control.the
 
 main
 // <---- keyword.declaration.the
