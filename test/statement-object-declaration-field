@@ -22,3 +22,12 @@ obj Human {
 // <~~------ meta.definition.property.the variable.object.property.the
 //      ^^^^^^^^^^^^^ meta.type.annotation.the
 }
+
+obj Point {
+  mut x: int
+// <~~---------- meta.field.declaration.the
+// <~~--- storage.modifier.the
+  mut y: int
+// <~~---------- meta.field.declaration.the
+// <~~--- storage.modifier.the
+}

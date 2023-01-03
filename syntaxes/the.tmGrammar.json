@@ -776,15 +776,21 @@
           "include": "#statement-object-field"
         },
         {
+          "include": "#statement-function-declaration"
+        },
+        {
           "include": "#punctuation-semicolon"
         }
       ]
     },
     "statement-object-field": {
       "name": "meta.field.declaration.the",
-      "begin": "([_[:alpha:]]\\w*)\\s*(?=:)",
+      "begin": "(?:((?<!\\w|\\.)mut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:)",
       "beginCaptures": {
         "1": {
+          "name": "storage.modifier.the"
+        },
+        "2": {
           "name": "meta.definition.property.the variable.object.property.the"
         }
       },

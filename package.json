@@ -6,7 +6,7 @@
   "homepage": "https://the-lang.io/",
   "author": "Aaron Delasy <aaron@thelang.io>",
   "icon": "media/logo-color.png",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "main": "build/extension.js",
   "private": true,
   "publisher": "the",

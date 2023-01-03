@@ -23,9 +23,9 @@ obj Human {
   age: int
 // <---------- meta.object.declaration.the
 // <~~-------- meta.field.declaration.the
-  gender: HumanGender
-// <--------------------- meta.object.declaration.the
-// <~~------------------- meta.field.declaration.the
+  mut gender: HumanGender
+// <------------------------- meta.object.declaration.the
+// <~~----------------------- meta.field.declaration.the
 }
 // <- meta.object.declaration.the
 // <- punctuation.definition.block.the
@@ -38,3 +38,19 @@ export obj Test {x: int}
 //              ^ punctuation.definition.block.the
 //               ^^^^^^ meta.field.declaration.the
 //                     ^ punctuation.definition.block.the
+
+obj Test {
+// <---------- meta.object.declaration.the
+  fn job1 () {}
+// <--------------- meta.object.declaration.the
+// <~~------------- meta.function.the
+  fn job2 (self: Self) {}
+// <------------------------- meta.object.declaration.the
+// <~~----------------------- meta.function.the
+  fn job2 (self: ref Self, param1: str) {}
+// <------------------------------------------ meta.object.declaration.the
+// <~~---------------------------------------- meta.function.the
+  fn job2 (mut self: ref Self, mut param1: str) ref Self { return self }
+// <------------------------------------------------------------------------ meta.object.declaration.the
+// <~~---------------------------------------------------------------------- meta.function.the
+}
