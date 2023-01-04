@@ -865,11 +865,18 @@
             },
             {
               "include": "#types"
+            },
+            {
+              "name": "punctuation.separator.parameter.the",
+              "match": ","
             }
           ]
         },
         {
-          "include": "#type-function"
+          "include": "#type-function-parameter"
+        },
+        {
+          "include": "#type-function-return-type"
         },
         {
           "include": "#type-reference"
@@ -927,54 +934,6 @@
         }
       ]
     },
-    "type-function": {
-      "name": "meta.type.function.the",
-      "begin": "(?<!\\w|\\.)(fn)\\s+(?:([_[:alpha:]]\\w*)\\s*)?",
-      "beginCaptures": {
-        "1": {
-          "name": "storage.type.function.the"
-        },
-        "2": {
-          "name": "entity.name.function.the"
-        }
-      },
-      "end": "(?<=\\))",
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#type-function-parameters"
-        }
-      ]
-    },
-    "type-function-parameters": {
-      "name": "meta.type.function.parameters.the",
-      "begin": "\\(",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.definition.parameters.begin.the"
-        }
-      },
-      "end": "\\)",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.definition.parameters.end.the"
-        }
-      },
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#type-function-parameter"
-        },
-        {
-          "name": "punctuation.separator.parameter.the",
-          "match": ","
-        }
-      ]
-    },
     "type-function-parameter": {
       "begin": "(?:((?<!\\w|\\.)mut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:)",
       "beginCaptures": {
@@ -992,6 +951,23 @@
         },
         {
           "include": "#type-annotation"
+        }
+      ]
+    },
+    "type-function-return-type": {
+      "begin": "->",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.operator.type.function.the"
+        }
+      },
+      "end": "(?<!->)(?=[\\)\\{\\}=;]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
         }
       ]
     },

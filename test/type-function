@@ -1,72 +1,53 @@
 // SYNTAX TEST "source.the"
 
-test: fn () void
-//    ^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^ meta.type.function.parameters.the
-//       ^ punctuation.definition.parameters.begin.the
-//        ^ punctuation.definition.parameters.end.the
+test: () -> void
+//    ^ meta.brace.round.the
+//     ^ meta.brace.round.the
+//       ^^ keyword.operator.type.function.the
 //          ^^^^ storage.type.built-in.primitive.the
 
-test: fn test () void
-//    ^^^^^^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^^^ entity.name.function.the
-//            ^^ meta.type.function.parameters.the
-//            ^ punctuation.definition.parameters.begin.the
-//             ^ punctuation.definition.parameters.end.the
-//               ^^^^ storage.type.built-in.primitive.the
-
-test: fn (a: int) int
-//    ^^^^^^^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^^^^^^^ meta.type.function.parameters.the
-//       ^ punctuation.definition.parameters.begin.the
-//        ^ variable.parameter.the
-//         ^ keyword.operator.type.annotation.the
-//           ^^^ storage.type.built-in.primitive.the
-//              ^ punctuation.definition.parameters.end.the
+test: (a: int) -> int
+//    ^ meta.brace.round.the
+//     ^ variable.parameter.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^ storage.type.built-in.primitive.the
+//           ^ meta.brace.round.the
+//             ^^ keyword.operator.type.function.the
 //                ^^^ storage.type.built-in.primitive.the
 
-test: fn (a: Test) Test
-//    ^^^^^^^^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^^^^^^^^ meta.type.function.parameters.the
-//       ^ punctuation.definition.parameters.begin.the
-//        ^ variable.parameter.the
-//         ^ keyword.operator.type.annotation.the
-//           ^^^^ entity.name.type.the
-//               ^ punctuation.definition.parameters.end.the
+test: (a: Test) -> Test
+//    ^ meta.brace.round.the
+//     ^ variable.parameter.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^^ entity.name.type.the
+//            ^ meta.brace.round.the
+//              ^^ keyword.operator.type.function.the
 //                 ^^^^ entity.name.type.the
 
-test: fn (a: int, mut b: str) int
-//    ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^^^^^^^^^^^^^^^^^^^ meta.type.function.parameters.the
-//       ^ punctuation.definition.parameters.begin.the
-//        ^ variable.parameter.the
-//         ^ keyword.operator.type.annotation.the
-//           ^^^ storage.type.built-in.primitive.the
-//              ^ punctuation.separator.parameter.the
-//                ^^^ storage.modifier.the
-//                    ^ variable.parameter.the
-//                     ^ keyword.operator.type.annotation.the
-//                       ^^^ storage.type.built-in.primitive.the
-//                          ^ punctuation.definition.parameters.end.the
+test: (a: int, mut b: str) -> int
+//    ^ meta.brace.round.the
+//     ^ variable.parameter.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^ storage.type.built-in.primitive.the
+//           ^ punctuation.separator.parameter.the
+//             ^^^ storage.modifier.the
+//                 ^ variable.parameter.the
+//                  ^ keyword.operator.type.annotation.the
+//                    ^^^ storage.type.built-in.primitive.the
+//                       ^ meta.brace.round.the
+//                         ^^ keyword.operator.type.function.the
 //                            ^^^ storage.type.built-in.primitive.the
 
-test: fn (a: Test, mut b: Test) Test
-//    ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
-//    ^^ storage.type.function.the
-//       ^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.parameters.the
-//       ^ punctuation.definition.parameters.begin.the
-//        ^ variable.parameter.the
-//         ^ keyword.operator.type.annotation.the
-//           ^^^^ entity.name.type.the
-//               ^ punctuation.separator.parameter.the
-//                 ^^^ storage.modifier.the
-//                     ^ variable.parameter.the
-//                      ^ keyword.operator.type.annotation.the
-//                        ^^^^ entity.name.type.the
-//                            ^ punctuation.definition.parameters.end.the
+test: (a: Test, mut b: Test) -> Test
+//    ^ meta.brace.round.the
+//     ^ variable.parameter.the
+//      ^ keyword.operator.type.annotation.the
+//        ^^^^ entity.name.type.the
+//            ^ punctuation.separator.parameter.the
+//              ^^^ storage.modifier.the
+//                  ^ variable.parameter.the
+//                   ^ keyword.operator.type.annotation.the
+//                     ^^^^ entity.name.type.the
+//                         ^ meta.brace.round.the
+//                           ^^ keyword.operator.type.function.the
 //                              ^^^^ entity.name.type.the

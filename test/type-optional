@@ -22,16 +22,36 @@ test: Human[]?
 //          ^ meta.brace.square.the
 //           ^ meta.type.optional.the keyword.operator.optional.the
 
-test: (fn (a: int, mut b: str) int)?
+test: ((a: int, mut b: str) -> int)?
 //    ^ meta.brace.round.the
-//     ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//     ^ meta.brace.round.the
+//      ^ variable.parameter.the
+//       ^ keyword.operator.type.annotation.the
+//         ^^^ storage.type.built-in.primitive.the
+//            ^ punctuation.separator.parameter.the
+//              ^^^ storage.modifier.the
+//                  ^ variable.parameter.the
+//                   ^ keyword.operator.type.annotation.the
+//                     ^^^ storage.type.built-in.primitive.the
+//                        ^ meta.brace.round.the
+//                          ^^ keyword.operator.type.function.the
 //                             ^^^ storage.type.built-in.primitive.the
 //                                ^ meta.brace.round.the
 //                                 ^ meta.type.optional.the keyword.operator.optional.the
 
-test: (fn (a: Test, mut b: Test) Test)?
+test: ((a: Test, mut b: Test) -> Test)?
 //    ^ meta.brace.round.the
-//     ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//     ^ meta.brace.round.the
+//      ^ variable.parameter.the
+//       ^ keyword.operator.type.annotation.the
+//         ^^^^ entity.name.type.the
+//             ^ punctuation.separator.parameter.the
+//               ^^^ storage.modifier.the
+//                   ^ variable.parameter.the
+//                    ^ keyword.operator.type.annotation.the
+//                      ^^^^ entity.name.type.the
+//                          ^ meta.brace.round.the
+//                            ^^ keyword.operator.type.function.the
 //                               ^^^^ entity.name.type.the
 //                                   ^ meta.brace.round.the
 //                                    ^ meta.type.optional.the keyword.operator.optional.the

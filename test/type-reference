@@ -26,16 +26,36 @@ test: ref Human[]
 //             ^ meta.brace.square.the
 //              ^ meta.brace.square.the
 
-test: ref fn (a: int, mut b: str) int
+test: ref (a: int, mut b: str) -> int
 //    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.expression.reference.the
-//        ^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//        ^ meta.brace.round.the
+//         ^ variable.parameter.the
+//          ^ keyword.operator.type.annotation.the
+//            ^^^ storage.type.built-in.primitive.the
+//               ^ punctuation.separator.parameter.the
+//                 ^^^ storage.modifier.the
+//                     ^ variable.parameter.the
+//                      ^ keyword.operator.type.annotation.the
+//                        ^^^ storage.type.built-in.primitive.the
+//                           ^ meta.brace.round.the
+//                             ^^ keyword.operator.type.function.the
 //                                ^^^ storage.type.built-in.primitive.the
 
-test: ref fn (a: Test, mut b: Test) Test
+test: ref (a: Test, mut b: Test) -> Test
 //    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.expression.reference.the
-//        ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.type.function.the
+//        ^ meta.brace.round.the
+//         ^ variable.parameter.the
+//          ^ keyword.operator.type.annotation.the
+//            ^^^^ entity.name.type.the
+//                ^ punctuation.separator.parameter.the
+//                  ^^^ storage.modifier.the
+//                      ^ variable.parameter.the
+//                       ^ keyword.operator.type.annotation.the
+//                         ^^^^ entity.name.type.the
+//                             ^ meta.brace.round.the
+//                               ^^ keyword.operator.type.function.the
 //                                  ^^^^ entity.name.type.the
 
 test: ref int?
