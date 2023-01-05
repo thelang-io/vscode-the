@@ -52,14 +52,14 @@ test: ((a: Test, mut b: Test) -> Test)[]
 
 test: int?[]
 //    ^^^ storage.type.built-in.primitive.the
-//       ^ meta.type.optional.the keyword.operator.optional.the
+//       ^ keyword.operator.optional.the
 //        ^^ meta.type.array.the
 //        ^ meta.brace.square.the
 //         ^ meta.brace.square.the
 
 test: Human?[]
 //    ^^^^^ entity.name.type.the
-//         ^ meta.type.optional.the keyword.operator.optional.the
+//         ^ keyword.operator.optional.the
 //          ^^ meta.type.array.the
 //          ^ meta.brace.square.the
 //           ^ meta.brace.square.the

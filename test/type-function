@@ -6,6 +6,13 @@ test: () -> void
 //       ^^ keyword.operator.type.function.the
 //          ^^^^ storage.type.built-in.primitive.the
 
+test: (int) -> int
+//    ^ meta.brace.round.the
+//     ^^^ storage.type.built-in.primitive.the
+//        ^ meta.brace.round.the
+//          ^^ keyword.operator.type.function.the
+//             ^^^ storage.type.built-in.primitive.the
+
 test: (a: int) -> int
 //    ^ meta.brace.round.the
 //     ^ variable.parameter.the
@@ -15,6 +22,13 @@ test: (a: int) -> int
 //             ^^ keyword.operator.type.function.the
 //                ^^^ storage.type.built-in.primitive.the
 
+test: (Test) -> Test
+//    ^ meta.brace.round.the
+//     ^^^^ entity.name.type.the
+//         ^ meta.brace.round.the
+//           ^^ keyword.operator.type.function.the
+//              ^^^^ entity.name.type.the
+
 test: (a: Test) -> Test
 //    ^ meta.brace.round.the
 //     ^ variable.parameter.the
@@ -23,6 +37,15 @@ test: (a: Test) -> Test
 //            ^ meta.brace.round.the
 //              ^^ keyword.operator.type.function.the
 //                 ^^^^ entity.name.type.the
+
+test: (int, str) -> int
+//    ^ meta.brace.round.the
+//     ^^^ storage.type.built-in.primitive.the
+//        ^ punctuation.separator.parameter.the
+//          ^^^ storage.type.built-in.primitive.the
+//             ^ meta.brace.round.the
+//               ^^ keyword.operator.type.function.the
+//                  ^^^ storage.type.built-in.primitive.the
 
 test: (a: int, mut b: str) -> int
 //    ^ meta.brace.round.the
@@ -37,6 +60,15 @@ test: (a: int, mut b: str) -> int
 //                       ^ meta.brace.round.the
 //                         ^^ keyword.operator.type.function.the
 //                            ^^^ storage.type.built-in.primitive.the
+
+test: (Test, Test) -> Test
+//    ^ meta.brace.round.the
+//     ^^^^ entity.name.type.the
+//         ^ punctuation.separator.parameter.the
+//           ^^^^ entity.name.type.the
+//               ^ meta.brace.round.the
+//                 ^^ keyword.operator.type.function.the
+//                    ^^^^ entity.name.type.the
 
 test: (a: Test, mut b: Test) -> Test
 //    ^ meta.brace.round.the

@@ -48,7 +48,7 @@
     "pack": "vsce package",
     "publish": "vsce publish",
     "test": "npm run test-grammar && npm run lint",
-    "test-grammar": "vscode-tmgrammar-test -g syntaxes/the.tmGrammar.json 'test/*'",
+    "test-grammar": "vscode-tmgrammar-test -g syntaxes/the.tmLanguage.json 'test/*'",
     "prepare": "husky install"
   },
   "contributes": {
@@ -69,7 +69,7 @@
       {
         "language": "the",
         "scopeName": "source.the",
-        "path": "./syntaxes/the.tmGrammar.json"
+        "path": "./syntaxes/the.tmLanguage.json"
       }
     ],
     "snippets": [

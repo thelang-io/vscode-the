@@ -62,10 +62,10 @@ test: ref int?
 //    ^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.expression.reference.the
 //        ^^^ storage.type.built-in.primitive.the
-//           ^ meta.type.optional.the keyword.operator.optional.the
+//           ^ keyword.operator.optional.the
 
 test: ref Human?
 //    ^^^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.expression.reference.the
 //        ^^^^^ entity.name.type.the
-//             ^ meta.type.optional.the keyword.operator.optional.the
+//             ^ keyword.operator.optional.the

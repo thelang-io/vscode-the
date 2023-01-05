@@ -1,0 +1,91 @@
+// SYNTAX TEST "source.the"
+
+fn test (param: str...) {}
+//              ^^^ storage.type.built-in.primitive.the
+//                 ^^^ keyword.operator.variadic.the
+
+fn test (param: Test...) {}
+//              ^^^^ entity.name.type.the
+//                  ^^^ keyword.operator.variadic.the
+
+fn test (param: str[]...) {}
+//              ^^^ storage.type.built-in.primitive.the
+//                 ^^ meta.type.array.the
+//                   ^^^ keyword.operator.variadic.the
+
+fn test (param: Test[]...) {}
+//              ^^^^ entity.name.type.the
+//                  ^^ meta.type.array.the
+//                    ^^^ keyword.operator.variadic.the
+
+fn test (param: ((param1: int, param2: str) -> void)...) {}
+//              ^ meta.brace.round.the
+//                                                 ^ meta.brace.round.the
+//                                                  ^^^ keyword.operator.variadic.the
+
+fn test (param: ((param1: Test, param2: Test) -> Test)...) {}
+//              ^ meta.brace.round.the
+//                                                   ^ meta.brace.round.the
+//                                                    ^^^ keyword.operator.variadic.the
+
+fn test (param: str?...) {}
+//              ^^^ storage.type.built-in.primitive.the
+//                 ^ keyword.operator.optional.the
+//                  ^^^ keyword.operator.variadic.the
+
+fn test (param: Test?...) {}
+//              ^^^^ entity.name.type.the
+//                  ^ keyword.operator.optional.the
+//                   ^^^ keyword.operator.variadic.the
+
+fn test (param: (ref str)...) {}
+//              ^ meta.brace.round.the
+//               ^^^^^^^ meta.type.reference.the
+//                      ^ meta.brace.round.the
+//                       ^^^ keyword.operator.variadic.the
+
+fn test (param: (ref Test)...) {}
+//              ^ meta.brace.round.the
+//               ^^^^^^^^ meta.type.reference.the
+//                       ^ meta.brace.round.the
+//                        ^^^ keyword.operator.variadic.the
+
+fn test (param1: int, param2: str...) {}
+//                            ^^^ storage.type.built-in.primitive.the
+//                               ^^^ keyword.operator.variadic.the
+
+fn test (param1: int, param2: Test...) {}
+//                            ^^^^ entity.name.type.the
+//                                ^^^ keyword.operator.variadic.the
+
+test: (int...) -> void
+//     ^^^ storage.type.built-in.primitive.the
+//        ^^^ keyword.operator.variadic.the
+
+test: (Test...) -> void
+//     ^^^^ entity.name.type.the
+//         ^^^ keyword.operator.variadic.the
+
+test: (int, str...) -> void
+//          ^^^ storage.type.built-in.primitive.the
+//             ^^^ keyword.operator.variadic.the
+
+test: (int, Test...) -> void
+//          ^^^^ entity.name.type.the
+//              ^^^ keyword.operator.variadic.the
+
+test: (param: int...) -> void
+//            ^^^ storage.type.built-in.primitive.the
+//               ^^^ keyword.operator.variadic.the
+
+test: (param: Test...) -> void
+//            ^^^^ entity.name.type.the
+//                ^^^ keyword.operator.variadic.the
+
+test: (param1: int, param2: str...) -> void
+//                          ^^^ storage.type.built-in.primitive.the
+//                             ^^^ keyword.operator.variadic.the
+
+test: (param1: int, param2: Test...) -> void
+//                          ^^^^ entity.name.type.the
+//                              ^^^ keyword.operator.variadic.the
