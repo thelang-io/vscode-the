@@ -106,3 +106,14 @@ loop true {
 // <~~----------- meta.loop.the meta.loop.the
 }
 // <- meta.loop.the
+
+loop test {
+// <----------- meta.loop.the
+// <---- keyword.control.loop.the
+//   ^^^^ variable.other.readwrite.the
+//        ^ meta.block.the
+  print()
+// <--------- meta.loop.the meta.block.the
+// <~~------- meta.function-call.the
+}
+// <- meta.loop.the meta.block.the

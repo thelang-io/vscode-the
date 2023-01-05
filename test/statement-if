@@ -88,3 +88,14 @@ if (
 // <---- meta.if.the
 // <- meta.brace.round.the
 // <~~-- meta.block.the
+
+if test {
+// <--------- meta.if.the
+// <-- keyword.control.conditional.the
+// ^^^^ variable.other.readwrite.the
+//      ^ meta.block.the
+  print()
+// <--------- meta.if.the meta.block.the
+// <~~------- meta.function-call.the
+}
+// <- meta.if.the meta.block.the
