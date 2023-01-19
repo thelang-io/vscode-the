@@ -1,11 +1,56 @@
 {
+  "enumeration declaration": {
+    "prefix": "enum",
+    "body": [
+      "enum $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Enumeration declaration snippet"
+  },
+  "function declaration": {
+    "prefix": "fn",
+    "body": [
+      "fn ($2) $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Function declaration snippet"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If snippet"
+  },
   "loop": {
     "prefix": "loop",
     "body": [
-      "loop ${1} {",
+      "loop $1 {",
       "\t$0",
       "}"
     ],
     "description": "Loop snippet"
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "main {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Main snippet"
+  },
+  "object declaration": {
+    "prefix": "obj",
+    "body": [
+      "obj $1 {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Object declaration snippet"
   }
 }
