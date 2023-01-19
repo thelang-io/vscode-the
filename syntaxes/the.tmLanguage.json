@@ -499,6 +499,9 @@
     "statements": {
       "patterns": [
         {
+          "include": "#statement-enumeration-declaration"
+        },
+        {
           "include": "#statement-function-declaration"
         },
         {
@@ -524,6 +527,55 @@
         },
         {
           "include": "#punctuation-semicolon"
+        }
+      ]
+    },
+    "statement-enumeration-declaration": {
+      "name": "meta.enum.declaration.the",
+      "begin": "(?<!\\w|\\.)(?:(\\bexport)\\s+)?(\\benum)\\s+([_[:alpha:]]\\w*)\\s*(\\{)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.export.the"
+        },
+        "2": {
+          "name": "storage.type.enum.the"
+        },
+        "3": {
+          "name": "entity.name.type.enum.the"
+        },
+        "4": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "begin": "([_[:alpha:]]\\w*)",
+          "beginCaptures": {
+            "0": {
+              "name": "variable.other.enummember.the"
+            }
+          },
+          "end": "(?=,|\\}|$)",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#variable-initializer"
+            }
+          ]
+        },
+        {
+          "include": "#punctuation-comma"
         }
       ]
     },

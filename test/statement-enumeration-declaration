@@ -1,0 +1,120 @@
+// SYNTAX TEST "source.the"
+
+enum Test {}
+// <------------ meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+//         ^ punctuation.definition.block.the
+
+export enum Test {}
+// <------------------- meta.enum.declaration.the
+// <------ keyword.control.export.the
+//     ^^^^ storage.type.enum.the
+//          ^^^^ entity.name.type.enum.the
+//               ^ punctuation.definition.block.the
+//                ^ punctuation.definition.block.the
+
+enum Test { Member1 }
+// <--------------------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+//          ^^^^^^^ variable.other.enummember.the
+//                  ^ punctuation.definition.block.the
+
+enum Test { Member1, Member2 }
+// <------------------------------ meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+//          ^^^^^^^ variable.other.enummember.the
+//                 ^ punctuation.separator.comma.the
+//                   ^^^^^^^ variable.other.enummember.the
+//                           ^ punctuation.definition.block.the
+
+enum Test { Member1 = 1 }
+// <--------------------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+//          ^^^^^^^ variable.other.enummember.the
+//                  ^ keyword.operator.assignment.the
+//                    ^ constant.numeric.the
+//                      ^ punctuation.definition.block.the
+
+enum Test { Member1 = 1, Member2 = 2 }
+// <------------------------------ meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+//          ^^^^^^^ variable.other.enummember.the
+//                  ^ keyword.operator.assignment.the
+//                    ^ constant.numeric.the
+//                     ^ punctuation.separator.comma.the
+//                       ^^^^^^^ variable.other.enummember.the
+//                               ^ keyword.operator.assignment.the
+//                                 ^ constant.numeric.the
+//                                   ^ punctuation.definition.block.the
+
+enum Test {
+// <----------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+  Member1
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+}
+// <- meta.enum.declaration.the
+// <- punctuation.definition.block.the
+
+enum Test {
+// <----------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+  Member1,
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+//       ^ punctuation.separator.comma.the
+  Member2
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+}
+// <- meta.enum.declaration.the
+// <- punctuation.definition.block.the
+
+enum Test {
+// <----------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+  Member1 = 1
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+//        ^ keyword.operator.assignment.the
+//          ^ constant.numeric.the
+}
+// <- meta.enum.declaration.the
+// <- punctuation.definition.block.the
+
+enum Test {
+// <----------- meta.enum.declaration.the
+// <---- storage.type.enum.the
+//   ^^^^ entity.name.type.enum.the
+//        ^ punctuation.definition.block.the
+  Member1 = 1,
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+//        ^ keyword.operator.assignment.the
+//          ^ constant.numeric.the
+//           ^ punctuation.separator.comma.the
+  Member2 = 2
+// <--------- meta.enum.declaration.the
+// <~~------- variable.other.enummember.the
+//        ^ keyword.operator.assignment.the
+//          ^ constant.numeric.the
+}
+// <- meta.enum.declaration.the
+// <- punctuation.definition.block.the
