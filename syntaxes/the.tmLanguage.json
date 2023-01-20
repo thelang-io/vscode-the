@@ -142,7 +142,6 @@
           "match": "[_[:alpha:]]\\w*"
         },
         {
-          "name": "",
           "match": "(\\.)(\\s*[_[:alpha:]]\\w*)",
           "captures": {
             "1": {

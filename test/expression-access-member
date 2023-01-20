@@ -1,0 +1,19 @@
+// SYNTAX TEST "source.the"
+
+.test
+// <- punctuation.accessor.the
+// <~---- variable.other.property.the
+
+.prop1.prop2
+// <- punctuation.accessor.the
+// <~----- variable.other.property.the
+//    ^ punctuation.accessor.the
+//     ^^^^^ variable.other.property.the
+
+.prop1.prop2.prop3
+// <- punctuation.accessor.the
+// <~----- variable.other.property.the
+//    ^ punctuation.accessor.the
+//     ^^^^^ variable.other.property.the
+//          ^ punctuation.accessor.the
+//           ^^^^^ variable.other.property.the
