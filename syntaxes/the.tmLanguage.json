@@ -94,6 +94,9 @@
           "include": "#expression-call"
         },
         {
+          "include": "#expression-is"
+        },
+        {
           "include": "#expression-literal"
         },
         {
@@ -231,6 +234,23 @@
         }
       ]
     },
+    "expression-is": {
+      "begin": "(?<!\\w|\\.)(\\bis)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.expression.is.the"
+        }
+      },
+      "end": "(?=[);,}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
     "expression-literal": {
       "patterns": [
         {
@@ -363,7 +383,7 @@
         },
         {
           "name": "keyword.declaration.the",
-          "match": "(?<!\\w|\\.)(const|enum|fn|main|obj|union)(?!\\w|\\.)"
+          "match": "(?<!\\w|\\.)(const|enum|fn|main|obj|type|union)(?!\\w|\\.)"
         },
         {
           "name": "keyword.operator.expression.is.the",

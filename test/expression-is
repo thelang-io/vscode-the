@@ -1,0 +1,11 @@
+// SYNTAX TEST "source.the"
+
+test is int
+//   ^^ keyword.operator.expression.is.the
+//      ^^^ storage.type.built-in.primitive.the
+
+test is int | str
+//   ^^ keyword.operator.expression.is.the
+//      ^^^ storage.type.built-in.primitive.the
+//          ^ keyword.operator.type.the
+//            ^^^ storage.type.built-in.primitive.the
