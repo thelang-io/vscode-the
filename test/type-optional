@@ -56,6 +56,16 @@ test: ((a: Test, mut b: Test) -> Test)?
 //                                   ^ meta.brace.round.the
 //                                    ^ keyword.operator.optional.the
 
+test: int??
+//    ^^^ storage.type.built-in.primitive.the
+//       ^ keyword.operator.optional.the
+//        ^ keyword.operator.optional.the
+
+test: Human??
+//    ^^^^^ entity.name.type.the
+//         ^ keyword.operator.optional.the
+//          ^ keyword.operator.optional.the
+
 test: (ref int)?
 //    ^ meta.brace.round.the
 //     ^^^^^^^ meta.type.reference.the
@@ -67,3 +77,19 @@ test: (ref Human)?
 //     ^^^^^^^^^ meta.type.reference.the
 //              ^ meta.brace.round.the
 //               ^ keyword.operator.optional.the
+
+test: (int | str)?
+//    ^ meta.brace.round.the
+//     ^^^ storage.type.built-in.primitive.the
+//         ^ keyword.operator.type.the
+//           ^^^ storage.type.built-in.primitive.the
+//              ^ meta.brace.round.the
+//               ^ keyword.operator.optional.the
+
+test: (Human | Alien)?
+//    ^ meta.brace.round.the
+//     ^^^^^ entity.name.type.the
+//           ^ keyword.operator.type.the
+//             ^^^^^ entity.name.type.the
+//                  ^ meta.brace.round.the
+//                   ^ keyword.operator.optional.the

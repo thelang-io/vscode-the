@@ -50,6 +50,22 @@ fn test (param: (ref Test)...) {}
 //                       ^ meta.brace.round.the
 //                        ^^^ keyword.operator.variadic.the
 
+fn test (param: (int | str)...) {}
+//              ^ meta.brace.round.the
+//               ^^^ storage.type.built-in.primitive.the
+//                   ^ keyword.operator.type.the
+//                     ^^^ storage.type.built-in.primitive.the
+//                        ^ meta.brace.round.the
+//                         ^^^ keyword.operator.variadic.the
+
+fn test (param: (Test1 | Test2)...) {}
+//              ^ meta.brace.round.the
+//               ^^^^^ entity.name.type.the
+//                     ^ keyword.operator.type.the
+//                       ^^^^^ entity.name.type.the
+//                            ^ meta.brace.round.the
+//                             ^^^ keyword.operator.variadic.the
+
 fn test (param1: int, param2: str...) {}
 //                            ^^^ storage.type.built-in.primitive.the
 //                               ^^^ keyword.operator.variadic.the

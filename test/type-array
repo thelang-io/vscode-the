@@ -12,6 +12,24 @@ test: Human[]
 //         ^ meta.brace.square.the
 //          ^ meta.brace.square.the
 
+test: int[][]
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^ meta.type.array.the
+//       ^ meta.brace.square.the
+//        ^ meta.brace.square.the
+//         ^^ meta.type.array.the
+//         ^ meta.brace.square.the
+//          ^ meta.brace.square.the
+
+test: Human[][]
+//    ^^^^^ entity.name.type.the
+//         ^^ meta.type.array.the
+//         ^ meta.brace.square.the
+//          ^ meta.brace.square.the
+//           ^^ meta.type.array.the
+//           ^ meta.brace.square.the
+//            ^ meta.brace.square.the
+
 test: ((a: int, mut b: str) -> int)[]
 //    ^ meta.brace.round.the
 //     ^ meta.brace.round.the
@@ -79,3 +97,23 @@ test: (ref Human)[]
 //               ^^ meta.type.array.the
 //               ^ meta.brace.square.the
 //                ^ meta.brace.square.the
+
+test: (int | str)[]
+//    ^ meta.brace.round.the
+//     ^^^ storage.type.built-in.primitive.the
+//         ^ keyword.operator.type.the
+//           ^^^ storage.type.built-in.primitive.the
+//              ^ meta.brace.round.the
+//               ^^ meta.type.array.the
+//               ^ meta.brace.square.the
+//                ^ meta.brace.square.the
+
+test: (Human | Alien)[]
+//    ^ meta.brace.round.the
+//     ^^^^^ entity.name.type.the
+//           ^ keyword.operator.type.the
+//             ^^^^^ entity.name.type.the
+//                  ^ meta.brace.round.the
+//                   ^^ meta.type.array.the
+//                   ^ meta.brace.square.the
+//                    ^ meta.brace.square.the

@@ -69,3 +69,31 @@ test: ref Human?
 //    ^^^ keyword.operator.expression.reference.the
 //        ^^^^^ entity.name.type.the
 //             ^ keyword.operator.optional.the
+
+test: ref ref int
+//    ^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^^^^^ meta.type.reference.the meta.type.reference.the
+//        ^^^ keyword.operator.expression.reference.the
+//            ^^^ storage.type.built-in.primitive.the
+
+test: ref ref Human
+//    ^^^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^^^^^^^ meta.type.reference.the meta.type.reference.the
+//        ^^^ keyword.operator.expression.reference.the
+//            ^^^^^ entity.name.type.the
+
+test: ref int | str
+//    ^^^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^ storage.type.built-in.primitive.the
+//            ^ keyword.operator.type.the
+//              ^^^ storage.type.built-in.primitive.the
+
+test: ref Human | Alien
+//    ^^^^^^^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^^^ entity.name.type.the
+//              ^ keyword.operator.type.the
+//                ^^^^^ entity.name.type.the
