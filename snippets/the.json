@@ -52,5 +52,12 @@
       "}"
     ],
     "description": "Object declaration snippet"
+  },
+  "type declaration": {
+    "prefix": "type",
+    "body": [
+      "type $1 = $0"
+    ],
+    "description": "Type declaration snippet"
   }
 }
