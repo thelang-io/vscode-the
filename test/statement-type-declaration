@@ -1,0 +1,25 @@
+// SYNTAX TEST "source.the"
+
+type Test = int
+// <--------------- meta.type.declaration.the
+// <---- storage.type.type.the
+//   ^^^^ entity.name.type.alias.the
+//        ^ keyword.operator.assignment.the
+//          ^^^ storage.type.built-in.primitive.the
+
+type Test =
+// <----------- meta.type.declaration.the
+// <---- storage.type.type.the
+//   ^^^^ entity.name.type.alias.the
+//        ^ keyword.operator.assignment.the
+  int
+// <----- meta.type.declaration.the
+// <~~--- storage.type.built-in.primitive.the
+
+export type Test = int
+// <---------------------- meta.type.declaration.the
+// <------ keyword.control.export.the
+//     ^^^^ storage.type.type.the
+//          ^^^^ entity.name.type.alias.the
+//               ^ keyword.operator.assignment.the
+//                 ^^^ storage.type.built-in.primitive.the

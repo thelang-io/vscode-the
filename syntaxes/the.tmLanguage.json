@@ -519,6 +519,9 @@
           "include": "#statement-return"
         },
         {
+          "include": "#statement-type-declaration"
+        },
+        {
           "include": "#statement-variable-declaration"
         },
         {
@@ -874,6 +877,33 @@
         },
         {
           "include": "#expressions"
+        }
+      ]
+    },
+    "statement-type-declaration": {
+      "name": "meta.type.declaration.the",
+      "begin": "(?<!\\w|\\.)(?:(\\bexport)\\s+)?(\\btype)(?!\\w|\\.)\\s+([_[:alpha:]]\\w*)\\s*(=)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.export.the"
+        },
+        "2": {
+          "name": "storage.type.type.the"
+        },
+        "3": {
+          "name": "entity.name.type.alias.the"
+        },
+        "4": {
+          "name": "keyword.operator.assignment.the"
+        }
+      },
+      "end": "(?=[);}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
         }
       ]
     },
