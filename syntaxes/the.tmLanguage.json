@@ -929,7 +929,7 @@
     },
     "statement-variable-declaration": {
       "name": "meta.var.expr.the",
-      "begin": "(?:((?<!\\w|\\.)\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:=?)",
+      "begin": "(?:((?<!\\w|\\.)\\bconst|\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:=?)",
       "beginCaptures": {
         "1": {
           "name": "storage.modifier.the"

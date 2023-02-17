@@ -38,3 +38,24 @@ mut test: i64 = 10
 //      ^^^^^ meta.type.annotation.the
 //            ^ keyword.operator.assignment.the
 //              ^^ constant.numeric.the
+
+const test := 10
+// <---------------- meta.var.expr.the
+// <----- storage.modifier.the
+//    ^^^^ meta.definition.variable.the variable.other.readwrite.the
+//         ^^ keyword.operator.assignment.the
+//            ^^ constant.numeric.the
+
+const test: str
+// <--------------- meta.var.expr.the
+// <----- storage.modifier.the
+//    ^^^^ meta.definition.variable.the variable.other.readwrite.the
+//        ^^^^^ meta.type.annotation.the
+
+const test: i64 = 10
+// <-------------------- meta.var.expr.the
+// <----- storage.modifier.the
+//    ^^^^ meta.definition.variable.the variable.other.readwrite.the
+//        ^^^^^ meta.type.annotation.the
+//              ^ keyword.operator.assignment.the
+//                ^^ constant.numeric.the
