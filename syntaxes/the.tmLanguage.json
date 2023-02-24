@@ -81,11 +81,14 @@
           "include": "#expression-object"
         },
         {
-          "include": "#expressions-without-object"
+          "include": "#expression-map"
+        },
+        {
+          "include": "#expressions-without-braces"
         }
       ]
     },
-    "expressions-without-object": {
+    "expressions-without-braces": {
       "patterns": [
         {
           "include": "#expression-array"
@@ -132,7 +135,7 @@
               "include": "#comments"
             },
             {
-              "include": "#expressions-without-object"
+              "include": "#expressions-without-braces"
             }
           ]
         }
@@ -173,7 +176,7 @@
               "include": "#comments"
             },
             {
-              "include": "#expressions-without-object"
+              "include": "#expressions-without-braces"
             }
           ]
         }
@@ -273,6 +276,36 @@
         }
       ]
     },
+    "expression-map": {
+      "name": "meta.mapliteral.the",
+      "begin": "\\{",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "end": "\\}",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.block.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "name": "punctuation.separator.key-value.the",
+          "match": ":"
+        },
+        {
+          "include": "#expressions"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
     "expression-object": {
       "name": "meta.objectliteral.the",
       "begin": "([_[:alpha:]]\\w*)\\s*(\\{)",
@@ -337,7 +370,7 @@
           "include": "#comments"
         },
         {
-          "include": "#expressions-without-object"
+          "include": "#expressions-without-braces"
         }
       ]
     },
@@ -717,7 +750,7 @@
                   "include": "#comments"
                 },
                 {
-                  "include": "#expressions-without-object"
+                  "include": "#expressions-without-braces"
                 }
               ]
             },
@@ -744,7 +777,7 @@
                   "include": "#comments"
                 },
                 {
-                  "include": "#expressions-without-object"
+                  "include": "#expressions-without-braces"
                 }
               ]
             },
@@ -799,7 +832,7 @@
               "include": "#statement-variable-declaration"
             },
             {
-              "include": "#expressions-without-object"
+              "include": "#expressions-without-braces"
             },
             {
               "include": "#punctuation-semicolon"

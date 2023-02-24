@@ -1,0 +1,54 @@
+// SYNTAX TEST "source.the"
+
+{}
+// <-- meta.mapliteral.the
+// <- punctuation.definition.block.the
+// <~- punctuation.definition.block.the
+
+{"a": 10, "b": "test"}
+// <---------------------- meta.mapliteral.the
+// <- punctuation.definition.block.the
+// <~--- string.quoted.double.the
+//  ^ punctuation.separator.key-value.the
+//    ^^ constant.numeric.the
+//      ^ punctuation.separator.comma.the
+//        ^^^ string.quoted.double.the
+//           ^ punctuation.separator.key-value.the
+//             ^^^^^^ string.quoted.double.the
+//                   ^ punctuation.definition.block.the
+
+{"a": {"c": 10}}
+// <---------------- meta.mapliteral.the
+// <- punctuation.definition.block.the
+// <~--- string.quoted.double.the
+//  ^ punctuation.separator.key-value.the
+//    ^^^^^^^^^ meta.mapliteral.the meta.mapliteral.the
+//    ^ punctuation.definition.block.the
+//     ^^^ string.quoted.double.the
+//        ^ punctuation.separator.key-value.the
+//          ^^ constant.numeric.the
+//            ^ punctuation.definition.block.the
+//             ^ punctuation.definition.block.the
+
+{
+// <- meta.mapliteral.the
+// <- punctuation.definition.block.the
+  "a": 10,
+// <---------- meta.mapliteral.the
+// <~~--- string.quoted.double.the
+//   ^ punctuation.separator.key-value.the
+//     ^^ constant.numeric.the
+//       ^ punctuation.separator.comma.the
+  "b": {"c": 10}
+// <---------------- meta.mapliteral.the
+// <~~--- string.quoted.double.the
+//   ^ punctuation.separator.key-value.the
+//     ^^^^^^^^^ meta.mapliteral.the meta.mapliteral.the
+//     ^ punctuation.definition.block.the
+//      ^^^ string.quoted.double.the
+//         ^ punctuation.separator.key-value.the
+//           ^^ constant.numeric.the
+//             ^ punctuation.definition.block.the
+}
+// <- meta.mapliteral.the
+// <- punctuation.definition.block.the
