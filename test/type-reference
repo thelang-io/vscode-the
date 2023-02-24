@@ -58,6 +58,18 @@ test: ref (a: Test, mut b: Test) -> Test
 //                               ^^ keyword.operator.type.function.the
 //                                  ^^^^ entity.name.type.the
 
+test: ref int[str]
+//    ^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^ storage.type.built-in.primitive.the
+//           ^^^^^ meta.type.map.the
+
+test: ref Human[Test]
+//    ^^^^^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^^^ entity.name.type.the
+//             ^^^^^^ meta.type.map.the
+
 test: ref int?
 //    ^^^^^^^^^ meta.type.reference.the
 //    ^^^ keyword.operator.expression.reference.the

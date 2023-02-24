@@ -28,6 +28,16 @@ fn test (param: ((param1: Test, param2: Test) -> Test)...) {}
 //                                                   ^ meta.brace.round.the
 //                                                    ^^^ keyword.operator.variadic.the
 
+fn test (param: str[str]...) {}
+//              ^^^ storage.type.built-in.primitive.the
+//                 ^^^^^ meta.type.map.the
+//                      ^^^ keyword.operator.variadic.the
+
+fn test (param: Test[Value]...) {}
+//              ^^^^ entity.name.type.the
+//                  ^^^^^^^ meta.type.map.the
+//                         ^^^ keyword.operator.variadic.the
+
 fn test (param: str?...) {}
 //              ^^^ storage.type.built-in.primitive.the
 //                 ^ keyword.operator.optional.the

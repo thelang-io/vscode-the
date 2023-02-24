@@ -993,6 +993,9 @@
           "include": "#type-array"
         },
         {
+          "include": "#type-map"
+        },
+        {
           "include": "#type-primitive-builtin"
         },
         {
@@ -1032,24 +1035,15 @@
     },
     "type-array": {
       "name": "meta.type.array.the",
-      "begin": "(?=\\[\\])",
-      "end": "(\\[)(\\])",
-      "endCaptures": {
+      "match": "(\\[)\\s*(\\])",
+      "captures": {
         "1": {
           "name": "meta.brace.square.the"
         },
         "2": {
           "name": "meta.brace.square.the"
         }
-      },
-      "patterns": [
-        {
-          "include": "#comments"
-        },
-        {
-          "include": "#types"
-        }
-      ]
+      }
     },
     "type-function-parameter": {
       "begin": "(?:((?<!\\w|\\.)\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:)",
@@ -1079,6 +1073,29 @@
         }
       },
       "end": "(?<!->)(?=[\\)\\{\\}=;]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    "type-map": {
+      "name": "meta.type.map.the",
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "meta.brace.square.the"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.square.the"
+        }
+      },
       "patterns": [
         {
           "include": "#comments"

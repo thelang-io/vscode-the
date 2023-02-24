@@ -86,6 +86,20 @@ test: ((a: Test1, mut b: Test1) -> Test1) | ((a: Test2, mut b: Test2) -> Test2)
 //                                                                       ^^^^^ entity.name.type.the
 //                                                                            ^ meta.brace.round.the
 
+test: int[str] | str[int]
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^^^^ meta.type.map.the
+//             ^ keyword.operator.type.the
+//               ^^^ storage.type.built-in.primitive.the
+//                  ^^^^^ meta.type.map.the
+
+test: Human[Test] | Alien[Test]
+//    ^^^^^ entity.name.type.the
+//         ^^^^^^ meta.type.map.the
+//                ^ keyword.operator.type.the
+//                  ^^^^^ entity.name.type.the
+//                       ^^^^^^ meta.type.map.the
+
 test: int? | str?
 //    ^^^ storage.type.built-in.primitive.the
 //       ^ keyword.operator.optional.the

@@ -56,6 +56,16 @@ test: ((a: Test, mut b: Test) -> Test)?
 //                                   ^ meta.brace.round.the
 //                                    ^ keyword.operator.optional.the
 
+test: int[str]?
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^^^^ meta.type.map.the
+//            ^ keyword.operator.optional.the
+
+test: Human[Test]?
+//    ^^^^^ entity.name.type.the
+//         ^^^^^^ meta.type.map.the
+//               ^ keyword.operator.optional.the
+
 test: int??
 //    ^^^ storage.type.built-in.primitive.the
 //       ^ keyword.operator.optional.the
