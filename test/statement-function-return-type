@@ -7,3 +7,11 @@ fn test () int { return 2 }
 fn test () Test {}
 //        ^^^^^^ meta.return.type.the
 //         ^^^^ entity.name.type.the
+
+fn test () int
+//        ^^^^ meta.return.type.the
+//         ^^^ storage.type.built-in.primitive.the
+
+fn test () Test
+//        ^^^^^ meta.return.type.the
+//         ^^^^ entity.name.type.the

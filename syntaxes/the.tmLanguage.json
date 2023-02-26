@@ -651,7 +651,7 @@
           "name": "meta.definition.function.the entity.name.function.the"
         }
       },
-      "end": "(?<=\\})",
+      "end": "(?<=;|\\}|$|\\/[\\/\\*])",
       "patterns": [
         {
           "include": "#comments"
@@ -719,8 +719,8 @@
     },
     "statement-function-declaration-return-type": {
       "name": "meta.return.type.the",
-      "begin": "(?<=\\))\\s*(?=[^\\{]*\\{)",
-      "end": "(?<!\\))(?=\\{)",
+      "begin": "(?<=\\))\\s*",
+      "end": "(?<!\\))(?=;|\\{|$|\\/[\\/\\*])",
       "patterns": [
         {
           "include": "#comments"

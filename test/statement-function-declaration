@@ -70,3 +70,42 @@ fn test1 () int {
 // <---------------- meta.block.the
 }
 // <- meta.block.the
+
+fn test () void
+// <--------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^ meta.definition.function.the entity.name.function.the
+//      ^^ meta.parameters.the
+//         ^^^^ meta.return.type.the
+
+fn test (a: int) void
+// <--------------------- meta.function.the
+// <-- storage.type.function.the
+// ^^^^ meta.definition.function.the entity.name.function.the
+//      ^^^^^^^^ meta.parameters.the
+//               ^^^^ meta.return.type.the
+
+async fn async_test () void
+// <--------------------------- meta.function.the
+// <----- storage.modifier.async.the
+//    ^^ storage.type.function.the
+//       ^^^^^^^^^^ meta.definition.function.the entity.name.function.the
+//                  ^^ meta.parameters.the
+//                     ^^^^ meta.return.type.the
+
+export fn test () void
+// <---------------------- meta.function.the
+// <------ keyword.control.export.the
+//     ^^ storage.type.function.the
+//        ^^^^ meta.definition.function.the entity.name.function.the
+//             ^^ meta.parameters.the
+//                ^^^^ meta.return.type.the
+
+export async fn async_test () void
+// <---------------------------------- meta.function.the
+// <------ keyword.control.export.the
+//     ^^^^^ storage.modifier.async.the
+//           ^^ storage.type.function.the
+//              ^^^^^^^^^^ meta.definition.function.the entity.name.function.the
+//                         ^^ meta.parameters.the
+//                            ^^^^ meta.return.type.the

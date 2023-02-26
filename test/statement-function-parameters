@@ -69,3 +69,73 @@ fn test (
 ) {}
 // <- meta.parameters.the
 // <- punctuation.definition.parameters.end.the
+
+fn test (a: int) void
+//      ^^^^^^^^ meta.parameters.the
+//      ^ punctuation.definition.parameters.begin.the
+//       ^ variable.parameter.the
+//        ^^^^^ meta.type.annotation.the
+//             ^ punctuation.definition.parameters.end.the
+
+fn test (mut a: int) void
+//      ^^^^^^^^^^^^ meta.parameters.the
+//       ^^^ storage.modifier.the
+//      ^ punctuation.definition.parameters.begin.the
+//           ^ variable.parameter.the
+//            ^^^^^ meta.type.annotation.the
+//                 ^ punctuation.definition.parameters.end.the
+
+fn test (a: int, mut b := 2) void
+//      ^^^^^^^^^^^^^^^^^^^^ meta.parameters.the
+//      ^ punctuation.definition.parameters.begin.the
+//       ^ variable.parameter.the
+//        ^^^^^ meta.type.annotation.the
+//             ^ punctuation.separator.parameter.the
+//               ^^^ storage.modifier.the
+//                   ^ variable.parameter.the
+//                     ^^ keyword.operator.assignment.the
+//                        ^ constant.numeric.the
+//                         ^ punctuation.definition.parameters.end.the
+
+fn test (a: int, mut b := 2, c: i64 = 3) void
+//      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.parameters.the
+//      ^ punctuation.definition.parameters.begin.the
+//       ^ variable.parameter.the
+//        ^^^^^ meta.type.annotation.the
+//             ^ punctuation.separator.parameter.the
+//               ^^^ storage.modifier.the
+//                   ^ variable.parameter.the
+//                     ^^ keyword.operator.assignment.the
+//                        ^ constant.numeric.the
+//                         ^ punctuation.separator.parameter.the
+//                           ^ variable.parameter.the
+//                            ^^^^^ meta.type.annotation.the
+//                                  ^ keyword.operator.assignment.the
+//                                    ^ constant.numeric.the
+//                                     ^ punctuation.definition.parameters.end.the
+
+fn test (
+//      ^ meta.parameters.the
+//      ^ punctuation.definition.parameters.begin.the
+  a := 1,
+// <--------- meta.parameters.the
+// <~~- variable.parameter.the
+//  ^^ keyword.operator.assignment.the
+//     ^ constant.numeric.the
+//      ^ punctuation.separator.parameter.the
+  mut b := 2,
+// <------------- meta.parameters.the
+// <~~--- storage.modifier.the
+//    ^ variable.parameter.the
+//      ^^ keyword.operator.assignment.the
+//         ^ constant.numeric.the
+//          ^ punctuation.separator.parameter.the
+  c: i64 = 3
+// <------------ meta.parameters.the
+// <~~- variable.parameter.the
+// ^^^^^ meta.type.annotation.the
+//       ^ keyword.operator.assignment.the
+//         ^ constant.numeric.the
+) void
+// <- meta.parameters.the
+// <- punctuation.definition.parameters.end.the
