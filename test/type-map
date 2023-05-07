@@ -145,3 +145,12 @@ test: (Human | Alien)[Test]
 //                   ^ meta.brace.square.the
 //                    ^^^^ entity.name.type.the
 //                        ^ meta.brace.square.the
+
+test: int[str] = a
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^^^^ meta.type.map.the
+//       ^ meta.brace.square.the
+//        ^^^ storage.type.built-in.primitive.the
+//           ^ meta.brace.square.the
+//             ^ keyword.operator.assignment.the
+//               ^ variable.other.readwrite.the

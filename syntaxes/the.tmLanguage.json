@@ -1154,7 +1154,7 @@
           "name": "keyword.operator.expression.reference.the"
         }
       },
-      "end": "(?=[,;{})]|$)",
+      "end": "(?=[,;{})=]|$)",
       "patterns": [
         {
           "include": "#comments"

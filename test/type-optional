@@ -103,3 +103,9 @@ test: (Human | Alien)?
 //             ^^^^^ entity.name.type.the
 //                  ^ meta.brace.round.the
 //                   ^ keyword.operator.optional.the
+
+test: int? = a
+//    ^^^ storage.type.built-in.primitive.the
+//       ^ keyword.operator.optional.the
+//         ^ keyword.operator.assignment.the
+//           ^ variable.other.readwrite.the

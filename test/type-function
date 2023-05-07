@@ -83,3 +83,11 @@ test: (a: Test, mut b: Test) -> Test
 //                         ^ meta.brace.round.the
 //                           ^^ keyword.operator.type.function.the
 //                              ^^^^ entity.name.type.the
+
+test: () -> void = a
+//    ^ meta.brace.round.the
+//     ^ meta.brace.round.the
+//       ^^ keyword.operator.type.function.the
+//          ^^^^ storage.type.built-in.primitive.the
+//               ^ keyword.operator.assignment.the
+//                 ^ variable.other.readwrite.the

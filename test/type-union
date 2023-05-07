@@ -157,3 +157,10 @@ test: (Test1 | Test2) | (Test3 | Test4)
 //                             ^ keyword.operator.type.the
 //                               ^^^^^ entity.name.type.the
 //                                    ^ meta.brace.round.the
+
+test: int | str = a
+//    ^^^ storage.type.built-in.primitive.the
+//        ^ keyword.operator.type.the
+//          ^^^ storage.type.built-in.primitive.the
+//              ^ keyword.operator.assignment.the
+//                ^ variable.other.readwrite.the

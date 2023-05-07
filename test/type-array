@@ -131,3 +131,11 @@ test: (Human | Alien)[]
 //                   ^^ meta.type.array.the
 //                   ^ meta.brace.square.the
 //                    ^ meta.brace.square.the
+
+test: int[] = a
+//    ^^^ storage.type.built-in.primitive.the
+//       ^^ meta.type.array.the
+//       ^ meta.brace.square.the
+//        ^ meta.brace.square.the
+//          ^ keyword.operator.assignment.the
+//            ^ variable.other.readwrite.the

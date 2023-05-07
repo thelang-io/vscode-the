@@ -50,3 +50,8 @@ test: u64
 
 test: void
 //    ^^^^ storage.type.built-in.primitive.the
+
+test: int = a
+//    ^^^ storage.type.built-in.primitive.the
+//        ^ keyword.operator.assignment.the
+//          ^ variable.other.readwrite.the

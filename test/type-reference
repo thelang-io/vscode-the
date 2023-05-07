@@ -109,3 +109,10 @@ test: ref Human | Alien
 //        ^^^^^ entity.name.type.the
 //              ^ keyword.operator.type.the
 //                ^^^^^ entity.name.type.the
+
+test: ref int = a
+//    ^^^^^^^ meta.type.reference.the
+//    ^^^ keyword.operator.expression.reference.the
+//        ^^^ storage.type.built-in.primitive.the
+//            ^ keyword.operator.assignment.the
+//              ^ variable.other.readwrite.the
