@@ -23,34 +23,6 @@
     "Testing",
     "Other"
   ],
-  "dependencies": {
-    "vscode-languageclient": "^8.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/vscode": "1.30.0",
-    "husky": "^8.0.3",
-    "ts-standard": "^12.0.2",
-    "typescript": "^4.9.4",
-    "vsce": "^2.15.0",
-    "vscode-tmgrammar-test": "^0.1.1"
-  },
-  "engines": {
-    "vscode": "^1.30.0"
-  },
-  "galleryBanner": {
-    "color": "#FFFFFF",
-    "theme": "light"
-  },
-  "scripts": {
-    "build": "tsc",
-    "lint": "ts-standard",
-    "pack": "vsce package",
-    "publish": "vsce publish",
-    "test": "npm run test-grammar && npm run lint",
-    "test-grammar": "vscode-tmgrammar-test -g syntaxes/the.tmLanguage.json 'test/*'",
-    "prepare": "husky install"
-  },
   "contributes": {
     "languages": [
       {
@@ -78,5 +50,33 @@
         "path": "./snippets/the.json"
       }
     ]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "@types/vscode": "1.67.0",
+    "@vscode/vsce": "^2.15.0",
+    "husky": "^8.0.0",
+    "ts-standard": "^12.0.0",
+    "typescript": "^5.0.0",
+    "vscode-tmgrammar-test": "^0.1.0"
+  },
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "galleryBanner": {
+    "color": "#FFFFFF",
+    "theme": "light"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "ts-standard",
+    "pack": "vsce package",
+    "prepare": "husky install",
+    "publish": "vsce publish",
+    "test": "npm run test-grammar && npm run lint",
+    "test-grammar": "vscode-tmgrammar-test -g syntaxes/the.tmLanguage.json 'test/*'"
   }
 }
