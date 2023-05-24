@@ -1,0 +1,6 @@
+// SYNTAX TEST "source.the"
+
+throw Test{message: "test"}
+// <---------- meta.throw.the
+// <----- keyword.control.catch-exception.the
+//    ^^^^^^^^^^^^^^^^^^^^^ meta.objectliteral.the

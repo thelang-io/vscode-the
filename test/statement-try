@@ -1,0 +1,39 @@
+// SYNTAX TEST "source.the"
+
+try { test() } catch err: error_Error { print(err.stack) } catch err: MyError { print(err.stack) }
+// <-------------- meta.try.the
+// <--- keyword.control.catch-exception.the
+//  ^^^^^^^^^^ meta.block.the
+//             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.catch.the
+//             ^^^^^ keyword.control.catch-exception.the
+//                   ^^^^^^^^^^^^^^^^ meta.var.expr.the
+//                                    ^^^^^^^^^^^^^^^^^^^^ meta.block.the
+//                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.catch.the
+//                                                         ^^^^^ keyword.control.catch-exception.the
+//                                                               ^^^^^^^^^^^^ meta.var.expr.the
+//                                                                            ^^^^^^^^^^^^^^^^^^^^ meta.block.the
+
+try {
+// <----- meta.try.the
+// <--- keyword.control.catch-exception.the
+//  ^ meta.block.the
+  test()
+// <-------- meta.try.the meta.block.the
+} catch err: error_Error {
+// <- meta.try.the meta.block.the
+// <~~------------------------ meta.catch.the
+// <~~----- keyword.control.catch-exception.the
+//      ^^^^^^^^^^^^^^^^ meta.var.expr.the
+//                       ^ meta.block.the
+  print(err.stack)
+// <------------------ meta.catch.the meta.block.the
+} catch err: MyError {
+// <- meta.catch.the meta.block.the
+// <~~-------------------- meta.catch.the
+// <~~----- keyword.control.catch-exception.the
+//      ^^^^^^^^^^^^ meta.var.expr.the
+//                   ^ meta.block.the
+  print(err.stack)
+// <------------------ meta.catch.the meta.block.the
+}
+// <- meta.catch.the meta.block.the

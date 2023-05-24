@@ -15,9 +15,6 @@ await
 break
 // <----- keyword.control.the
 
-catch
-// <----- keyword.control.catch-exception.the
-
 const
 // <----- keyword.declaration.the
 

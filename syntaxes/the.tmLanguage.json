@@ -244,7 +244,7 @@
           "name": "keyword.operator.expression.is.the"
         }
       },
-      "end": "(?=[);,}\\]])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "end": "(?=[);,}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
       "patterns": [
         {
           "include": "#comments"
@@ -570,6 +570,12 @@
         },
         {
           "include": "#statement-return"
+        },
+        {
+          "include": "#statement-throw"
+        },
+        {
+          "include": "#statement-try"
         },
         {
           "include": "#statement-type-declaration"
@@ -933,6 +939,88 @@
         }
       ]
     },
+    "statement-throw": {
+      "name": "meta.throw.the",
+      "begin": "(?<!\\w|\\.)(\\bthrow)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.catch-exception.the"
+        }
+      },
+      "end": "(?=[,;{})]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
+        }
+      ]
+    },
+    "statement-try": {
+      "patterns": [
+        {
+          "name": "meta.try.the",
+          "begin": "(?<!\\w|\\.)(\\btry)(?!\\w|\\.)\\s*(?=\\{)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.catch-exception.the"
+            }
+          },
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "include": "#block"
+            }
+          ]
+        },
+        {
+          "name": "meta.catch.the",
+          "begin": "(?<!\\w|\\.)(?=(\\bcatch)\\s*)",
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "begin": "(?<!\\w|\\.)(\\bcatch)\\s*",
+              "beginCaptures": {
+                "1": {
+                  "name": "keyword.control.catch-exception.the"
+                }
+              },
+              "end": "(?=\\{)",
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#statement-catch-param"
+                }
+              ]
+            },
+            {
+              "include": "#block"
+            }
+          ]
+        }
+      ]
+    },
+    "statement-catch-param": {
+      "name": "meta.var.expr.the",
+      "begin": "([_[:alpha:]]\\w*)\\s*(?=:)",
+      "beginCaptures": {
+        "1": {
+          "name": "meta.definition.variable.the variable.other.readwrite.the"
+        }
+      },
+      "end": "(?=[\\{);}\\]])|(?=^\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#type-annotation"
+        }
+      ]
+    },
     "statement-type-declaration": {
       "name": "meta.type.declaration.the",
       "begin": "(?<!\\w|\\.)(?:(\\bexport)\\s+)?(\\btype)(?!\\w|\\.)\\s+([_[:alpha:]]\\w*)\\s*(=)",
@@ -1056,7 +1144,7 @@
           "name": "keyword.operator.type.annotation.the"
         }
       },
-      "end": "(?<!:)((?=$|^|[,);\\}\\]])|(?==))",
+      "end": "(?<!:)((?=$|^|[,);\\{\\}\\]])|(?==))",
       "patterns": [
         {
           "include": "#comments"
