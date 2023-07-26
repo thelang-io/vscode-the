@@ -1,5 +1,6 @@
 // SYNTAX TEST "source.the"
 
+// await - not possible
 // elif - not possible
 // if - not possible
 // loop - not possible
@@ -7,9 +8,6 @@
 // return - not possible
 
 async
-// <----- keyword.control.the
-
-await
 // <----- keyword.control.the
 
 break

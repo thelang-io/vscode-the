@@ -1,0 +1,6 @@
+// SYNTAX TEST "source.the"
+
+await test
+// <-------- meta.await.the
+// <---- keyword.operator.expression.await.the
+//    ^^^^ variable.other.readwrite.the

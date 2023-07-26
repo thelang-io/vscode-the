@@ -94,6 +94,9 @@
           "include": "#expression-array"
         },
         {
+          "include": "#expression-await"
+        },
+        {
           "include": "#expression-call"
         },
         {
@@ -205,6 +208,24 @@
         },
         {
           "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "expression-await": {
+      "name": "meta.await.the",
+      "begin": "(?<!\\w|\\.)(\\bawait)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.expression.await.the"
+        }
+      },
+      "end": "(?=[,;{})]|$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions-without-braces"
         }
       ]
     },
