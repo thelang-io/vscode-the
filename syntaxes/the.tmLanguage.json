@@ -94,6 +94,9 @@
           "include": "#expression-array"
         },
         {
+          "include": "#expression-as"
+        },
+        {
           "include": "#expression-await"
         },
         {
@@ -182,6 +185,23 @@
               "include": "#expressions-without-braces"
             }
           ]
+        }
+      ]
+    },
+    "expression-as": {
+      "begin": "(?<!\\w|\\.)(\\bas)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.operator.expression.as.the"
+        }
+      },
+      "end": "(?=[);,}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
         }
       ]
     },
@@ -438,6 +458,10 @@
         {
           "name": "keyword.declaration.the",
           "match": "(?<!\\w|\\.)(const|enum|fn|main|obj|type|union)(?!\\w|\\.)"
+        },
+        {
+          "name": "keyword.operator.expression.as.the",
+          "match": "(?<!\\w|\\.)(as)(?!\\w|\\.)"
         },
         {
           "name": "keyword.operator.expression.is.the",
