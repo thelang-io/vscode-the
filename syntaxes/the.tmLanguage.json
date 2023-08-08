@@ -84,6 +84,9 @@
           "include": "#expression-map"
         },
         {
+          "include": "#expression-closure"
+        },
+        {
           "include": "#expressions-without-braces"
         }
       ]
@@ -141,7 +144,13 @@
               "include": "#comments"
             },
             {
+              "include": "#expression-closure-parameter"
+            },
+            {
               "include": "#expressions-without-braces"
+            },
+            {
+              "include": "#punctuation-comma"
             }
           ]
         }
@@ -275,6 +284,114 @@
         },
         {
           "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "expression-closure": {
+      "patterns": [
+        {
+          "begin": "(?<!\\w|\\.)(?:(\\basync)\\s+)(?=\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.modifier.async.the"
+            }
+          },
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#expression-closure-parameters"
+            },
+            {
+              "include": "#expression-closure-return-type"
+            },
+            {
+              "include": "#block"
+            }
+          ]
+        },
+        {
+          "begin": "(?=\\->)",
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#expression-closure-return-type"
+            },
+            {
+              "include": "#block"
+            }
+          ]
+        }
+      ]
+    },
+    "expression-closure-parameters": {
+      "name": "meta.parameters.the",
+      "begin": "\\(",
+      "beginCaptures": {
+        "0": {
+          "name": "meta.brace.round.the"
+        }
+      },
+      "end": "\\)",
+      "endCaptures": {
+        "0": {
+          "name": "meta.brace.round.the"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expression-closure-parameter"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "expression-closure-parameter": {
+      "begin": "(?:((?<!\\w|\\.)\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:)",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.modifier.the"
+        },
+        "2": {
+          "name": "variable.parameter.the"
+        }
+      },
+      "end": "(?=,|\\))",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#type-annotation"
+        },
+        {
+          "include": "#variable-initializer"
+        }
+      ]
+    },
+    "expression-closure-return-type": {
+      "begin": "->",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.operator.type.function.the"
+        }
+      },
+      "end": "(?=\\{)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#types"
         }
       ]
     },

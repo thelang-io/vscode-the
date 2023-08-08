@@ -1,0 +1,105 @@
+// SYNTAX TEST "source.the"
+
+() -> void {}
+// <-- meta.brace.round.the
+// ^^ keyword.operator.type.function.the
+//    ^^^^ storage.type.built-in.primitive.the
+//         ^^ meta.block.the
+
+async () -> void {}
+// <----- storage.modifier.async.the
+//    ^^ meta.brace.round.the
+//       ^^ keyword.operator.type.function.the
+//          ^^^^ storage.type.built-in.primitive.the
+//               ^^ meta.block.the
+
+() -> int { return 2 }
+// <-- meta.brace.round.the
+// ^^ keyword.operator.type.function.the
+//    ^^^ storage.type.built-in.primitive.the
+//        ^^^^^^^^^^^^ meta.block.the
+
+() -> int {
+// <-- meta.brace.round.the
+// ^^ keyword.operator.type.function.the
+//    ^^^ storage.type.built-in.primitive.the
+//        ^ meta.block.the
+  return 2
+// <---------- meta.block.the
+}
+// <- meta.block.the
+
+(a: int) -> void {}
+// <- meta.brace.round.the
+// <~- variable.parameter.the
+// <~~----- meta.type.annotation.the
+//     ^ meta.brace.round.the
+//       ^^ keyword.operator.type.function.the
+//          ^^^^ storage.type.built-in.primitive.the
+//               ^^ meta.block.the
+
+(mut a: int) -> void {}
+// <- meta.brace.round.the
+// <~--- storage.modifier.the
+//   ^ variable.parameter.the
+//    ^^^^^ meta.type.annotation.the
+//         ^ meta.brace.round.the
+//           ^^ keyword.operator.type.function.the
+//              ^^^^ storage.type.built-in.primitive.the
+//                   ^^ meta.block.the
+
+(a: int, mut b := 2) -> void {}
+// <- meta.brace.round.the
+// <~- variable.parameter.the
+// <~~----- meta.type.annotation.the
+//     ^ punctuation.separator.comma.the
+//       ^^^ storage.modifier.the
+//           ^ variable.parameter.the
+//             ^^ keyword.operator.assignment.the
+//                ^ constant.numeric.the
+//                 ^ meta.brace.round.the
+//                   ^^ keyword.operator.type.function.the
+//                      ^^^^ storage.type.built-in.primitive.the
+//                           ^^ meta.block.the
+
+(a: int, mut b := 2, c: i64 = 3) -> void {}
+// <- meta.brace.round.the
+// <~- variable.parameter.the
+// <~~----- meta.type.annotation.the
+//     ^ punctuation.separator.comma.the
+//       ^^^ storage.modifier.the
+//           ^ variable.parameter.the
+//             ^^ keyword.operator.assignment.the
+//                ^ constant.numeric.the
+//                 ^ punctuation.separator.comma.the
+//                   ^ variable.parameter.the
+//                    ^^^^^ meta.type.annotation.the
+//                          ^ keyword.operator.assignment.the
+//                            ^ constant.numeric.the
+//                             ^ meta.brace.round.the
+//                               ^^ keyword.operator.type.function.the
+//                                  ^^^^ storage.type.built-in.primitive.the
+//                                       ^^ meta.block.the
+
+(
+// <- meta.brace.round.the
+  a: int,
+// <~~- variable.parameter.the
+// ^^^^^ meta.type.annotation.the
+//      ^ punctuation.separator.comma.the
+  mut b := 2,
+// <~~--- storage.modifier.the
+//    ^ variable.parameter.the
+//      ^^ keyword.operator.assignment.the
+//         ^ constant.numeric.the
+//          ^ punctuation.separator.comma.the
+  c: i64 = 3
+// <~~- variable.parameter.the
+// ^^^^^ meta.type.annotation.the
+//       ^ keyword.operator.assignment.the
+//         ^ constant.numeric.the
+) -> void {}
+// <- meta.brace.round.the
+// <~~-- keyword.operator.type.function.the
+//   ^^^^ storage.type.built-in.primitive.the
+//        ^^ meta.block.the
