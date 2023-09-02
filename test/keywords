@@ -2,7 +2,9 @@
 
 // await - not possible
 // elif - not possible
+// export - not possible
 // if - not possible
+// import - not possible
 // loop - not possible
 // ref - not possible
 // return - not possible
@@ -25,17 +27,11 @@ else
 enum
 // <---- keyword.declaration.the
 
-export
-// <------ keyword.control.the
-
 fn
 // <-- keyword.declaration.the
 
 from
 // <---- keyword.control.the
-
-import
-// <------ keyword.control.the
 
 is
 // <-- keyword.operator.expression.is.the

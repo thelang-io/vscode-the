@@ -746,6 +746,12 @@
           "include": "#statement-variable-declaration"
         },
         {
+          "include": "#statement-export-declaration"
+        },
+        {
+          "include": "#statement-import-declaration"
+        },
+        {
           "include": "#expressions"
         },
         {
@@ -799,6 +805,23 @@
         },
         {
           "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "statement-export-declaration": {
+      "begin": "(?<!\\w|\\.)(\\bexport)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.export.the"
+        }
+      },
+      "end": "(?=[);}\\]])|(?=^\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#expressions"
         }
       ]
     },
@@ -968,6 +991,69 @@
               "include": "#block"
             }
           ]
+        }
+      ]
+    },
+    "statement-import-declaration": {
+      "begin": "(?<!\\w|\\.)(\\bimport)\\s+",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.import.the"
+        }
+      },
+      "end": "(?=[);}\\]])|(?=^\\s*$)",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "match": "(\\bfrom)\\s+",
+          "captures": {
+            "1": {
+              "name": "keyword.control.from.the"
+            }
+          }
+        },
+        {
+          "include": "#statement-import-declaration-specifier"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#punctuation-comma"
+        }
+      ]
+    },
+    "statement-import-declaration-specifier": {
+      "patterns": [
+        {
+          "match": "(?<!\\w|\\.)([_[:alpha:]]\\w*)\\s*(?:(\\bas)\\s+([_[:alpha:]]\\w*))?",
+          "captures": {
+            "1": {
+              "name": "variable.other.readwrite.the"
+            },
+            "2": {
+              "name": "keyword.control.as.the"
+            },
+            "3": {
+              "name": "variable.other.readwrite.alias.the"
+            }
+          }
+        },
+        {
+          "match": "(\\*)\\s+(\\bas)\\s+([_[:alpha:]]\\w*)",
+          "captures": {
+            "1": {
+              "name": "constant.language.import-export-all.the"
+            },
+            "2": {
+              "name": "keyword.control.as.the"
+            },
+            "3": {
+              "name": "variable.other.readwrite.alias.the"
+            }
+          }
         }
       ]
     },
@@ -1212,12 +1298,15 @@
     },
     "statement-variable-declaration": {
       "name": "meta.var.expr.the",
-      "begin": "(?:((?<!\\w|\\.)\\bconst|\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:=?)",
+      "begin": "(?<!\\w|\\.)(?:(\\bexport)\\s+)?(?:((?<!\\w|\\.)\\bconst|\\bmut)\\s+)?([_[:alpha:]]\\w*)\\s*(?=:=?)",
       "beginCaptures": {
         "1": {
-          "name": "storage.modifier.the"
+          "name": "keyword.control.export.the"
         },
         "2": {
+          "name": "storage.modifier.the"
+        },
+        "3": {
           "name": "meta.definition.variable.the variable.other.readwrite.the"
         }
       },

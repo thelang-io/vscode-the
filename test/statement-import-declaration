@@ -1,0 +1,71 @@
+// SYNTAX TEST "source.the"
+
+import "test"
+// <------ keyword.control.import.the
+//     ^^^^^^ string.quoted.double.the
+
+import * as NS from "test"
+// <------ keyword.control.import.the
+//     ^ constant.language.import-export-all.the
+//       ^^ keyword.control.as.the
+//          ^^ variable.other.readwrite.alias.the
+//             ^^^^ keyword.control.from.the
+//                  ^^^^^^ string.quoted.double.the
+
+import * as NS, * as NS2 from "test"
+// <------ keyword.control.import.the
+//     ^ constant.language.import-export-all.the
+//       ^^ keyword.control.as.the
+//          ^^ variable.other.readwrite.alias.the
+//            ^ punctuation.separator.comma.the
+//              ^ constant.language.import-export-all.the
+//                ^^ keyword.control.as.the
+//                   ^^^ variable.other.readwrite.alias.the
+//                       ^^^^ keyword.control.from.the
+//                            ^^^^^^ string.quoted.double.the
+
+import t from "test"
+// <------ keyword.control.import.the
+//     ^ variable.other.readwrite.the
+//       ^^^^ keyword.control.from.the
+//            ^^^^^^ string.quoted.double.the
+
+import t, b from "test"
+// <------ keyword.control.import.the
+//     ^ variable.other.readwrite.the
+//      ^ punctuation.separator.comma.the
+//        ^ variable.other.readwrite.the
+//          ^^^^ keyword.control.from.the
+//               ^^^^^^ string.quoted.double.the
+
+import t as b, b as t from "test"
+// <------ keyword.control.import.the
+//     ^ variable.other.readwrite.the
+//       ^^ keyword.control.as.the
+//          ^ variable.other.readwrite.alias.the
+//           ^ punctuation.separator.comma.the
+//             ^ variable.other.readwrite.the
+//               ^^ keyword.control.as.the
+//                  ^ variable.other.readwrite.alias.the
+//                    ^^^^ keyword.control.from.the
+//                         ^^^^^^ string.quoted.double.the
+
+import t as b, b as t, * as NS, * as NS2 from "test"
+// <------ keyword.control.import.the
+//     ^ variable.other.readwrite.the
+//       ^^ keyword.control.as.the
+//          ^ variable.other.readwrite.alias.the
+//           ^ punctuation.separator.comma.the
+//             ^ variable.other.readwrite.the
+//               ^^ keyword.control.as.the
+//                  ^ variable.other.readwrite.alias.the
+//                   ^ punctuation.separator.comma.the
+//                     ^ constant.language.import-export-all.the
+//                       ^^ keyword.control.as.the
+//                          ^^ variable.other.readwrite.alias.the
+//                            ^ punctuation.separator.comma.the
+//                              ^ constant.language.import-export-all.the
+//                                ^^ keyword.control.as.the
+//                                   ^^^ variable.other.readwrite.alias.the
+//                                       ^^^^ keyword.control.from.the
+//                                            ^^^^^^ string.quoted.double.the

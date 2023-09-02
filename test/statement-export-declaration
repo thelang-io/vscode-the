@@ -1,0 +1,25 @@
+// SYNTAX TEST "source.the"
+
+export enum Test { One, Two }
+// <------ keyword.control.export.the
+
+export fn test () {}
+// <------ keyword.control.export.the
+
+export obj Test { a: int }
+// <------ keyword.control.export.the
+
+export type Alias = str
+// <------ keyword.control.export.the
+
+export const CONST_VAR := 10
+// <------ keyword.control.export.the
+
+export mut MUT_VAR := 10
+// <------ keyword.control.export.the
+
+export Test
+// <------ keyword.control.export.the
+
+export Test1.Test2
+// <------ keyword.control.export.the
