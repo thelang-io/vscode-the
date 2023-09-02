@@ -466,12 +466,18 @@
     },
     "expression-object": {
       "name": "meta.objectliteral.the",
-      "begin": "([_[:alpha:]]\\w*)\\s*(\\{)",
+      "begin": "([_[:alpha:]]\\w*)(?:(\\.)([_[:alpha:]]\\w*))*\\s*(\\{)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.type.object.the"
         },
         "2": {
+          "name": "punctuation.accessor.the"
+        },
+        "3": {
+          "name": "entity.name.type.object.the"
+        },
+        "4": {
           "name": "punctuation.definition.block.the"
         }
       },

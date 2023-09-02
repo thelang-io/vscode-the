@@ -41,3 +41,11 @@ Test1{
 }
 // <- meta.objectliteral.the
 // <- punctuation.definition.block.the
+
+Test1.Test2{}
+// <------ meta.objectliteral.the
+// <----- entity.name.type.object.the
+//   ^ punctuation.accessor.the
+//    ^^^^^ entity.name.type.object.the
+//         ^ punctuation.definition.block.the
+//          ^ punctuation.definition.block.the
