@@ -204,7 +204,7 @@
           "name": "keyword.operator.expression.as.the"
         }
       },
-      "end": "(?=[);,}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "end": "(?=[);,{}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
       "patterns": [
         {
           "include": "#comments"
@@ -402,7 +402,7 @@
           "name": "keyword.operator.expression.is.the"
         }
       },
-      "end": "(?=[);,}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
+      "end": "(?=[);,{}\\]&])|(?=^\\s*$)|(?<=\\S)(?<!=)(?=\\s*$)",
       "patterns": [
         {
           "include": "#comments"
@@ -1007,7 +1007,7 @@
           "name": "keyword.control.import.the"
         }
       },
-      "end": "(?=[);}\\]])|(?=^\\s*$)",
+      "end": "(?=[);{}\\]])|(?=^\\s*$)",
       "patterns": [
         {
           "include": "#comments"
